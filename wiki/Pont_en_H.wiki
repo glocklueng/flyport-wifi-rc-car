@@ -1,8 +1,9 @@
 #summary Réflexions sur le pont en H
 [http://data.imagup.com/12/1143040127.png]
+
 == Introduction ==
 
-Add your content here.
+Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
 
 
 == Details ==
