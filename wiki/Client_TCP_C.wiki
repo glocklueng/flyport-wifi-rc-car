@@ -12,9 +12,8 @@ On peux également utiliser l'outil [http://en.wikipedia.org/wiki/Netcat NetCat]
 
 Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
-*Direction* : `D=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus à gauche_ et 100 _le plus à droite_.
-
-*Vitesse* : `V=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus vite possible en marche arrière_ et 100 _le plus vite possible en marche avant_.
+ * *Direction* : `D=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus à gauche_ et 100 _le plus à droite_.
+ * *Vitesse* : `V=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus vite possible en marche arrière_ et 100 _le plus vite possible en marche avant_.
 
 
 == Code ==
@@ -109,6 +108,6 @@ int main(void)
 
 
 == Documentation ==
-* Titre de la page d’accueil ou du document, auteur, éditeur, date de publication et/ou date de mise à jour, URL
-* [http://broux.developpez.com/articles/c/sockets/ Les sockets en C], Benjamin Roux, 03/2009
-* [http://www.bien-programmer.fr/reseaux.php Notes brutes concernant les réseaux], Emmanuel Delahaye, 09/2010
+
+ * [http://broux.developpez.com/articles/c/sockets/ Les sockets en C], Benjamin Roux, 03/2009
+ * [http://www.bien-programmer.fr/reseaux.php Notes brutes concernant les réseaux], Emmanuel Delahaye, 09/2010
