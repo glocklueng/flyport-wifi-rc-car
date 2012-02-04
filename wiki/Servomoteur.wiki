@@ -1,0 +1,13 @@
+#summary Informations sur le servomoteur utilisé
+
+== Introduction ==
+
+Informations sur le servomoteur de direction de la voiture. Détails techniques, contraintes.
+
+
+== Details ==
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
