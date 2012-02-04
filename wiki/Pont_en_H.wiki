@@ -1,7 +1,7 @@
 #summary Réflexions sur le pont en H
 [http://data.imagup.com/12/1143040127.png]
 
-== Introduction ==
+= Introduction =
 
 Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
 
@@ -17,7 +17,7 @@ Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transist
 [http://www.telecom-robotics.org/pont_en_H Cette page] présente quelques références de composants pour faire un pont en H.
 
 
-== Drivers de ponts en H ==
+= Drivers de ponts en H =
 
  * *TD340* : [http://ad5ey.net/~david/motors/7048%20H-bridge%20controller%20-%20external%20FETs.pdf datasheet]
  * …
