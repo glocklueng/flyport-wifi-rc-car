@@ -1,11 +1,18 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
 
-= Introduction =
+== Introduction ==
 
-Add your content here.
+Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
 
 
-= Details =
+== Protocole ==
+
+Le protocole de communication TCP entre le Flyport et un client est le suivant :
+
+*Direction* :`code`
+
+
+== Code ==
 
 <code language="xml">
 /* Inclusions standard */
