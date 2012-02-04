@@ -6,9 +6,14 @@
 Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
 
 
-== Une réalisation de pont en H ==
+== Bla ==
+
+==== Une réalisation de pont en H ====
 
 [http://ancrobot.free.fr/Old_version/fichtech/action/ponthII/index.htm Cette page] présente une réalisation d'un pont en H capable de dissiper une grande puissance (courant de plusieurs ampères). On y trouve des références de composants intéressants dans le cadre du projet.
+
+==== Une réalisation de pont en H ====
+http://www.telecom-robotics.org/pont_en_H
 
 
 == Documentation ==
