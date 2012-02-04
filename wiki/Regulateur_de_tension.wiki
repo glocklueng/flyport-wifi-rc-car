@@ -10,9 +10,7 @@ Montage(s) de stabilisation d'alimentation pour composants sensibles tels que : 
 Quel est le modèle utilisé ? Quel est le montage réalisé et quelles sont les valeurs des composants utilisés. Problèmes rencontrés ?
 
 ==== LM342 ====
-
 Documentation : [http://www.datasheetcatalog.org/datasheets/134/49732_DS.pdf LM342].
 
 ==== LM317 ====
-
 Documentation : [http://www.datasheetcatalog.org/datasheet2/1/03cgthpfat4t4ly5kfp5lpwladfy.pdf LM317].
