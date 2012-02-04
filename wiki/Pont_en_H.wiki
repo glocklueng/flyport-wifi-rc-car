@@ -1,6 +1,5 @@
 #summary Réflexions sur le pont en H
 [http://data.imagup.com/12/1143040127.png]
-
 = Introduction =
 
 Add your content here.
@@ -12,10 +11,3 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-
-<code language="c">
-	char buffer[100];
-	int duty_cycle, continuer = 1;
-	while(continuer)
-	{
-</code>
