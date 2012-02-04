@@ -6,9 +6,12 @@
 Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
 
 
-== Details ==
+== Une réalisation de pont en H ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+[http://ancrobot.free.fr/Old_version/fichtech/action/ponthII/index.htm Cette page] présente une réalisation d'un pont en H capable de dissiper une grande puissance (courant de plusieurs ampères). On y trouve des références de composants intéressants dans le cadre du projet.
+
+
+== Documentation ==
+
+ * [http://www.rfc1149.net/rose2010/wp-content/uploads/2010/03/PWM-et-ponts-en-H.pdf PWM et Ponts en H], R. Bichet, J. Estivie, E. Molto et F. Tovo, 2010
+ * [http://ancrobot.free.fr/fiches/pdf/index(4).pdf Le Pont en H], P. Lucidarme, 03/2009
