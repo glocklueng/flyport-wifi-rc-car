@@ -1,12 +1,12 @@
 #summary Informations sur le servomoteur utilisé
 [http://data.imagup.com/12/1143040127.png]
 
-== Introduction ==
+= Introduction =
 
 Informations sur le servomoteur de direction de la voiture. Détails techniques, contraintes.
 
 
-== Details ==
+= Details =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
