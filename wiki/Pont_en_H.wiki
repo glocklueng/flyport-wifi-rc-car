@@ -12,6 +12,9 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
-{{{
-verbatim code block
-}}}
+<code language="c">
+	char buffer[100];
+	int duty_cycle, continuer = 1;
+	while(continuer)
+	{
+</code>
