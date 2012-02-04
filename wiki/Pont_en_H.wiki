@@ -6,7 +6,7 @@
 Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
 
 
-== Références à étudier ==
+= Références à étudier =
 
 ==== Une réalisation de pont en H ====
 
@@ -23,7 +23,7 @@ Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transist
  * …
 
 
-== Documentation ==
+= Documentation =
 
  * [http://www.rfc1149.net/rose2010/wp-content/uploads/2010/03/PWM-et-ponts-en-H.pdf PWM et Ponts en H], R. Bichet, J. Estivie, E. Molto et F. Tovo, 2010
  * [http://ancrobot.free.fr/fiches/pdf/index(4).pdf Le Pont en H], P. Lucidarme, 03/2009
