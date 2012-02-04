@@ -1,5 +1,6 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
-[http://data.imagup.com/12/1143040127.png]
+#[http://data.imagup.com/12/1143040127.png]
+<img src="http://communication.minatec.inpg.fr/Phelma_Scolarite/img/phelma.jpg" style="float:right" />
 
 == Introduction ==
 
