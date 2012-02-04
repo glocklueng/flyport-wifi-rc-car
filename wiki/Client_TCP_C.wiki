@@ -9,7 +9,7 @@ Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
 
 Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
-*Direction* :`code`
+*Direction* :`D=VALEUR`, où VALEUR ∈ [0 ; 100].
 
 
 == Code ==
