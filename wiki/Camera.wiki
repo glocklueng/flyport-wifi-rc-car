@@ -8,6 +8,6 @@ Réflexions sur les conditions à vérifier pour que la caméra soit utilisable 
 
 == Modèles de caméra repérés ==
 
-====== LinkSprite JPEG Color Camera TTL Interface ======
+*LinkSprite JPEG Color Camera TTL Interface*
 Site web : [http://www.sparkfun.com/products/10061].
 Prix : 49.95$ (37.96€)
