@@ -1,6 +1,5 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
 [http://data.imagup.com/12/1143040127.png]
-
 == Introduction ==
 
 Client TCP simple en C qui se connecte au Flyport et envoie les requêtes demandées. Utilisé à des fins de test des requêtes sur le Flyport et d'exemple de connexion TCP en C pour le programme de commande final.
