@@ -1,7 +1,7 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
 [http://data.imagup.com/12/1143040127.png]
 
-== Introduction ==
+= Introduction =
 
 Client TCP simple en C qui se connecte au Flyport et envoie les requêtes demandées. Utilisé à des fins de test des requêtes sur le Flyport et d'exemple de connexion TCP en C pour le programme de commande final.
 
@@ -9,7 +9,7 @@ On peux également utiliser l'outil [http://en.wikipedia.org/wiki/Netcat NetCat]
 {{{nc 192.168.1.115 2050}}}. Il suffit ensuite de taper les requêtes au clavier pour les envoyer.
 
 
-== Protocole ==
+= Protocole =
 
 Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
@@ -17,7 +17,7 @@ Le protocole de communication TCP entre le Flyport et un client est le suivant :
  * *Vitesse* : `V=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus vite possible en marche arrière_ et 100 _le plus vite possible en marche avant_.
 
 
-== Code ==
+= Code =
 
 Ce code est extrait de l'article de [http://broux.developpez.com/articles/c/sockets/ Benjamin Roux] (03/2009) qui constitue une bonne introduction aux connexion TCP en C sur les systèmes de type Unix et Windows.
 
@@ -108,7 +108,7 @@ int main(void)
 </code>
 
 
-== Documentation ==
+= Documentation =
 
  * [http://broux.developpez.com/articles/c/sockets/ Les sockets en C], Benjamin Roux, 03/2009
  * [http://www.bien-programmer.fr/reseaux.php Notes brutes concernant les réseaux], Emmanuel Delahaye, 09/2010
