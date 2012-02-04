@@ -4,7 +4,14 @@
 
 Montage(s) de stabilisation d'alimentation pour composants sensibles tels que : servomoteur, caméra vidéo, module Flyport.
 
+Quel est le modèle utilisé ? Quel est le montage réalisé et quelles sont les valeurs des composants utilisés. Problèmes rencontrés ?
 
-== Details ==
 
-Utilisation d'un régulateur de tension LM317.
+== LM342 ==
+
+Documentation : [http://www.datasheetcatalog.org/datasheets/134/49732_DS.pdf LM342].
+
+
+== LM317 ==
+
+Documentation : [http://www.datasheetcatalog.org/datasheet2/1/03cgthpfat4t4ly5kfp5lpwladfy.pdf LM317].
