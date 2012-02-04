@@ -1,6 +1,5 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
-#[http://data.imagup.com/12/1143040127.png]
-<img src="http://communication.minatec.inpg.fr/Phelma_Scolarite/img/phelma.jpg" style="float:right" />
+<img src="http://communication.minatec.inpg.fr/Phelma_Scolarite/img/phelma.jpg" style="float:right" height="50%" />
 
 == Introduction ==
 
@@ -16,6 +15,7 @@ Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
  * *Direction* : `D=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus à gauche_ et 100 _le plus à droite_.
  * *Vitesse* : `V=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus vite possible en marche arrière_ et 100 _le plus vite possible en marche avant_.
+[http://data.imagup.com/12/1143040127.png]
 
 
 == Code ==
