@@ -1,5 +1,5 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
-<img src="http://communication.minatec.inpg.fr/Phelma_Scolarite/img/phelma.jpg" height="50%" style="float:left;margin:0 5px 0 0;" />
+<img src="http://communication.minatec.inpg.fr/Phelma_Scolarite/img/phelma.jpg" height="10%" style="float:right; margin:0 5px 0 0;" />
 
 == Introduction ==
 
