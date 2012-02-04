@@ -106,3 +106,9 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 </code>
+
+
+== Documentation ==
+* Titre de la page d’accueil ou du document, auteur, éditeur, date de publication et/ou date de mise à jour, URL
+* [http://broux.developpez.com/articles/c/sockets/ Les sockets en C], Benjamin Roux, 03/2009
+* [http://www.bien-programmer.fr/reseaux.php Notes brutes concernant les réseaux], Emmanuel Delahaye, 09/2010
