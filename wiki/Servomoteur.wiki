@@ -1,4 +1,5 @@
 #summary Informations sur le servomoteur utilisé
+[http://data.imagup.com/12/1143040127.png]
 
 == Introduction ==
 
