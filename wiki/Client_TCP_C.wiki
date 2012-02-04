@@ -19,6 +19,8 @@ Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
 == Code ==
 
+Ce code est extrait de l'article de [http://broux.developpez.com/articles/c/sockets/ Benjamin Roux] (03/2009) qui constitue une bonne introduction aux connexion TCP en C sur les systèmes de type Unix et Windows.
+
 <code language="c">
 /* Inclusions standard */
 #include <stdio.h>
