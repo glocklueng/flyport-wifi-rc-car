@@ -1,0 +1,10 @@
+#summary Montage(s) de stabilisation d'alimentation.
+
+== Introduction ==
+
+Montage(s) de stabilisation d'alimentation pour composants sensibles tels que : servomoteur, caméra vidéo, module Flyport.
+
+
+== Details ==
+
+Utilisation d'un régulateur de tension LM317.
