@@ -1,0 +1,13 @@
+#summary Réflexions sur les caméras utilisables
+[http://data.imagup.com/12/1143040127.png]
+
+== Introduction ==
+
+Réflexions sur les conditions à vérifier pour que la caméra soit utilisable avec le Flyport et permette d'envoyer les données (compressées de préférence) par TCP au client.
+
+
+== Modèles de caméra repérés ==
+
+==== LinkSprite JPEG Color Camera TTL Interface ====
+Site web : [http://www.sparkfun.com/products/10061].
+Prix : 49.95$ (37.96€)
