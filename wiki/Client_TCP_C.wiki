@@ -4,7 +4,9 @@
 == Introduction ==
 
 Client TCP simple en C qui se connecte au Flyport et envoie les requêtes demandées. Utilisé à des fins de test des requêtes sur le Flyport et d'exemple de connexion TCP en C pour le programme de commande final.
-
+{{{#!wiki red/solid
+This is wiki markup in a '''div''' with __css__ `class="red solid"`.
+}}}
 On peux également utiliser l'outil [http://en.wikipedia.org/wiki/Netcat NetCat] de la manière suivante :
 {{{nc 192.168.1.115 2050}}}. Il suffit ensuite de taper les requêtes au clavier pour les envoyer.
 
