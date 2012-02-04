@@ -13,6 +13,7 @@ On peux également utiliser l'outil [http://www.lestutosdenico.com/tutos-de-nico
 Le protocole de communication TCP entre le Flyport et un client est le suivant :
 
 *Direction* : `D=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus à gauche_ et 100 _le plus à droite_.
+
 *Vitesse* : `V=VALEUR`, où VALEUR ∈ `[0 ; 100]`, 0 signifiant _le plus vite possible en marche arrière_ et 100 _le plus vite possible en marche avant_.
 
 
@@ -58,15 +59,15 @@ int main(void)
 	/* Connexion au serveur */
 	SOCKADDR_IN     sin = {0};	/* initialise la structure avec des 0 */
 	const char     *hostname = ADDR_IP;
-	struct hostent *hostinfo = gethostbyname(hostname);	/* on récupère les informations
-												de l'hôte auquel on veut se connecter */
+	struct hostent *hostinfo = gethostbyname(hostname);	/* on récupère les
+	informations de l'hôte auquel on veut se connecter */
 
 	if (hostinfo == NULL) {	/* l'hôte n'existe pas */
 		fprintf(stderr, "Unknown host %s.\n", hostname);
 		exit(EXIT_FAILURE);
 	}
-	sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;	/* l'adresse se trouve dans le champ
-													h_addr de la structure hostinfo */
+	sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;	/* l'adresse se trouve dans le
+	champ h_addr de la structure hostinfo */
 	sin.sin_port = htons(PORT);	/* choix du port utilisé */
 	sin.sin_family = AF_INET;
 
