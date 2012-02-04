@@ -17,6 +17,12 @@ Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transist
 [http://www.telecom-robotics.org/pont_en_H Cette page] présente quelques références de composants pour faire un pont en H.
 
 
+== Drivers de ponts en H
+
+ * *TD340* : [http://ad5ey.net/~david/motors/7048%20H-bridge%20controller%20-%20external%20FETs.pdf datasheet]
+ * …
+
+
 == Documentation ==
 
  * [http://www.rfc1149.net/rose2010/wp-content/uploads/2010/03/PWM-et-ponts-en-H.pdf PWM et Ponts en H], R. Bichet, J. Estivie, E. Molto et F. Tovo, 2010
