@@ -1,5 +1,5 @@
 #summary Client TCP en C qui se connecte au Flyport et envoie les requêtes demandées.
-[http://img11.hostingpics.net/pics/698960degrade.png]
+[http://data.imagup.com/12/1143039939.png]
 
 == Introduction ==
 
