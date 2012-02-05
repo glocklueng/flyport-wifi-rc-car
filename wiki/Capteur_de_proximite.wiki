@@ -1,4 +1,4 @@
-#summary Réflexions sur les capteur de proximité infrarouge utilisables
+#summary Réflexions sur les capteur de proximité à ultrasons utilisables
 [http://data.imagup.com/12/1143040127.png]
 
 = Introduction =
@@ -11,3 +11,7 @@ Notes importantes sur les conditions à vérifier sur les modules IR, en termes 
 *ePIR* (Motion Detector)
 [http://www.sparkfun.com/products/9587 Web],
 prix : 11.95$ (9.09€)
+
+*Infrared Proximity Sensor - Sharp GP2Y0A21YK*
+[http://www.sparkfun.com/products/242 Web],
+prix : 13.95$ (10.6€)
