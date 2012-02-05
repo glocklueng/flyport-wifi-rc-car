@@ -17,7 +17,7 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 
 || bla || bla || bla ||
 || bla || bla || bla ||
-|| bla || bla || bla ||
+|| bla  bla || bla ||
 
 
 *ePIR* (Motion Detector)
