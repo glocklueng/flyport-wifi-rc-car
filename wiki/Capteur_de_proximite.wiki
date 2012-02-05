@@ -15,9 +15,9 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 
 = Modèles de capteurs repérés =
 
-|| bla || bla || bla ||
-|| bla || bla || bla ||
-|| bla  bla || bla ||
+|| *Nom* || [http://www.sparkfun.com/products/9587 ePIR] ||
+|| *Prix* || 11.95$ (9.09€) ||
+|| *Description* || Motion Detector ||
 
 
 *ePIR* (Motion Detector)
