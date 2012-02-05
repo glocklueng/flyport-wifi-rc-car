@@ -10,6 +10,6 @@ La page [http://community.openpicus.com/net/projects projets] d'OpenPICUS prése
 
 = Modèles de caméra repérés =
 
-*!LinkSprite JPEG Color Camera TTL Interface*
-Site web : [http://www.sparkfun.com/products/10061].
-Prix : 49.95$ (37.96€)
+|| *Nom* || [http://www.sparkfun.com/products/10061 !LinkSprite JPEG Color Camera TTL Interface] ||
+|| *Prix* || 49.95$ (37.96€) ||
+|| *Description* || Necessite un [http://www.sparkfun.com/products/9917 câble de connexion] (1.50$) ||
