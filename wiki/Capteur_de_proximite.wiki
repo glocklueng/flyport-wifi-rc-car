@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Notes importantes sur les conditions à vérifier sur les modules IR, en termes de prix et de connectique.
+Notes importantes sur les conditions à vérifier sur les modules à ultrasons, en termes de prix, de performances et de connectique (pins, ).
 
 
 = Modèles de capteurs repérés =
@@ -15,3 +15,4 @@ prix : 11.95$ (9.09€)
 *Infrared Proximity Sensor - Sharp GP2Y0A21YK*
 [http://www.sparkfun.com/products/242 Web],
 prix : 13.95$ (10.6€)
+[http://dlnmh9ip6v2uc.cloudfront.net/images/products/00242-1.jpg]
