@@ -5,6 +5,8 @@
 
 Réflexions sur les conditions à vérifier pour que la caméra soit utilisable avec le Flyport et permette d'envoyer les données (compressées de préférence) par TCP au client.
 
+La page [http://community.openpicus.com/net/projects projets] d'OpenPICUS présente divers projets réalisés avec le Flyport, donc un [http://community.openpicus.com/sites/openpicus.com/files/files/CONTROL%20OF%20A%20MULTI-ROBOT%20SYSTEM%20USING%20VISUAL%20SENSORS.pdf robot intégrant une caméra].
+
 
 = Modèles de caméra repérés =
 
