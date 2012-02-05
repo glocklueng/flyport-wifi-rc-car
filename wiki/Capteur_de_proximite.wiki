@@ -1,9 +1,9 @@
-#summary Réflexions sur les capteur de proximité à ultrasons utilisables
+#summary Réflexions sur les capteur de proximité utilisables
 [http://data.imagup.com/12/1143040127.png]
 
 = Introduction =
 
-Notes importantes sur les conditions à vérifier sur les modules à ultrasons, en termes de prix, de performances et de connectique (pins, ).
+Notes importantes sur les conditions à vérifier sur les modules à ultrasons ou infrarouge, en termes de prix, de performances et de connectique (nombre de pins, tension).
 
 [http://bildr.org/2011/03/various-proximity-sensors-arduino/ Cet article] présente une réalisation de détecteur de proximité avec un Arduino et 3 capteurs différents, qui peuvent être des choix pertinents pour le projet.
 
