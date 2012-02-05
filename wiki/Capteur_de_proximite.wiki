@@ -8,6 +8,6 @@ Notes importantes sur les conditions à vérifier sur les modules IR, en termes 
 
 = Modèles de capteurs repérés =
 
-*ePIR*
-Site web : [http://www.sparkfun.com/products/9587].
-Prix : 11.95$ (9.09€)
+*ePIR* (Motion Detector)
+[http://www.sparkfun.com/products/9587 Web],
+prix : 11.95$ (9.09€)
