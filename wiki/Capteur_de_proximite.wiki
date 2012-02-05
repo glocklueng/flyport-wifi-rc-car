@@ -17,7 +17,7 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 
 || *Nom* || [http://www.sparkfun.com/products/9587 ePIR] ||
 || *Prix* || 11.95$ (9.09€) ||
-|| *Description* || Motion Detector ||
+|| *Description* || Motion Detector *Pas vraiment Adapté*||
 
 || *Nom* || [http://www.sparkfun.com/products/242 Infrared Proximity Sensor - Sharp GP2Y0A21YK] ||
 || *Prix* || 13.95$ (10.6€) ||
@@ -25,4 +25,8 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 
 || *Nom* || [http://www.sparkfun.com/products/639 Maxbotix LV-EZ0] ||
 || *Prix* || 25.95$ (19.7€) ||
-|| *Description* || Capteur de distance US Linéaire ||
+|| *Description* || Capteur de distance US Linéaire *Trop cher* ||
+
+|| *Nom* || [http://www.sparkfun.com/products/246 Optical Detector / Phototransistor - QRD1114] ||
+|| *Prix* || 1.13$ (0.86€) ||
+|| *Description* || Détecteur de proximité immédiate (0.5 à 3 cm). *Trop court* ||
