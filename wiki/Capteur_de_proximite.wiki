@@ -5,6 +5,8 @@
 
 Notes importantes sur les conditions à vérifier sur les modules à ultrasons, en termes de prix, de performances et de connectique (pins, ).
 
+[http://bildr.org/2011/03/various-proximity-sensors-arduino/ Cet article] présente une réalisation de détecteur de proximité avec un Arduino et 3 capteurs différents, qui peuvent être des choix pertinents pour le projet.
+
 
 = Modèles de capteurs repérés =
 
