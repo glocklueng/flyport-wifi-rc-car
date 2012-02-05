@@ -19,11 +19,6 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 || *Prix* || 11.95$ (9.09€) ||
 || *Description* || Motion Detector ||
 
-
-*ePIR* (Motion Detector)
-[http://www.sparkfun.com/products/9587 Web],
-prix : 11.95$ (9.09€)
-
-*Infrared Proximity Sensor - Sharp GP2Y0A21YK*
-[http://www.sparkfun.com/products/242 Web],
-prix : 13.95$ (10.6€)
+|| *Nom* || [http://www.sparkfun.com/products/242 Infrared Proximity Sensor - Sharp GP2Y0A21YK] ||
+|| *Prix* || 13.95$ (10.6€) ||
+|| *Description* || Capteur de distance IR Non-Linéaire ||
