@@ -1,0 +1,13 @@
+#summary Réflexions sur les capteur de proximité infrarouge utilisables
+[http://data.imagup.com/12/1143040127.png]
+
+= Introduction =
+
+Notes importantes sur les conditions à vérifier sur les modules IR, en termes de prix et de connectique.
+
+
+= Modèles de capteurs repérés =
+
+*ePIR*
+Site web : [http://www.sparkfun.com/products/9587].
+Prix : 11.95$ (9.09€)
