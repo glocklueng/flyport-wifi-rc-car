@@ -31,7 +31,8 @@ Bla
 = Drivers de ponts en H =
 
  * *TD340* : [http://ad5ey.net/~david/motors/7048%20H-bridge%20controller%20-%20external%20FETs.pdf datasheet]
- * …
+ * *SN754410* : [http://www.ti.com/lit/ds/symlink/sn754410.pdf datasheet] Quadruple Half-H Driver — 1A Output / Driver — 4.5 to 36V supply
+ * *L298* : [http://www.learn-c.com/l298.pdf datasheet] Ce driver [http://forum.sparkfun.com/viewtopic.php?f=32&t=21512 semble avoir la pêche] qu'il faut pour faire tourner une voiture similaire à la notre. 46V, 4A, protection contre la surchauffe. [http://www.sparkfun.com/products/9479 3$ chez Sparkfun].
 
 
 = Documentation =
