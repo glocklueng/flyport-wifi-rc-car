@@ -4,7 +4,7 @@
 #include <string.h>
 #include <errno.h>
 
-/* ConnectivitÃ© TCP/IP */
+/* Connectivité TCP/IP */
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -18,16 +18,16 @@ typedef int     SOCKET;
 typedef struct sockaddr_in SOCKADDR_IN;
 typedef struct sockaddr SOCKADDR;
 typedef struct in_addr IN_ADDR;
-#define h_addr  h_addr_list[0]	/* pour compatibilitÃ©.  */
+#define h_addr  h_addr_list[0]	/* pour compatibilité.  */
 
-/* ParamÃ¨tres de connexion par dÃ©faut */
+/* Paramètres de connexion par défaut */
 #define ADDR_IP	"192.168.1.115"
 #define PORT	2050
 #define BUFFER_SIZE 100
 
 int main(void)
 {
-	/* CrÃ©ation du socket */
+	/* Création du socket */
 	SOCKET          sock = socket(AF_INET, SOCK_STREAM, 0);
 	if (sock == INVALID_SOCKET) {
 		perror("socket()");
@@ -37,14 +37,14 @@ int main(void)
 	/* Connexion au serveur */
 	SOCKADDR_IN     sin = {0};	/* initialise la structure avec des 0 */
 	const char     *hostname = ADDR_IP;
-	struct hostent *hostinfo = gethostbyname(hostname);	/* on rÃ©cupÃ¨re les informations de l'hÃ´te auquel on veut se connecter */
+	struct hostent *hostinfo = gethostbyname(hostname);	/* on récupère les informations de l'hôte auquel on veut se connecter */
 
-	if (hostinfo == NULL) {	/* l'hÃ´te n'existe pas */
+	if (hostinfo == NULL) {	/* l'hôte n'existe pas */
 		fprintf(stderr, "Unknown host %s.\n", hostname);
 		exit(EXIT_FAILURE);
 	}
 	sin.sin_addr = *(IN_ADDR *) hostinfo->h_addr;	/* l'adresse se trouve dans le champ h_addr de la structure hostinfo */
-	sin.sin_port = htons(PORT);	/* choix du port utilisÃ© */
+	sin.sin_port = htons(PORT);	/* choix du port utilisé */
 	sin.sin_family = AF_INET;
 
 	if (connect(sock, (SOCKADDR *) & sin, sizeof(SOCKADDR)) == SOCKET_ERROR) {
@@ -52,20 +52,20 @@ int main(void)
 		exit(errno);
 	}
 	
-	/* Boucle du client TCP / Envoi-RÃ©ception des donnÃ©es */
+	/* Boucle du client TCP / Envoi-Réception des données */
 	char            buffer[100];
 	int             duty_cycle, continuer = 1;
 	while (continuer) {
 		printf("Entrez un rapport cyclique (0-100) : ");
 		scanf("%d", &duty_cycle);
 
-		/* Correction des valeurs entrÃ©es */
+		/* Correction des valeurs entrées */
 		if (duty > 100)
 			duty_cycle = 100;
 		if (duty < 0)
 			duty_cycle = 0;
 
-		/* Formattage de la requÃªte Flyport */
+		/* Formattage de la requète Flyport */
 		sprintf(buffer, "d=%d\n", duty_cycle);
 
 		if (send(sock, buffer, strlen(buffer), 0) < 0) {
