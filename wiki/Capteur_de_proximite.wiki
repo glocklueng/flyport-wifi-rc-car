@@ -34,3 +34,7 @@ Les détecteurs digitaux semblent être plus chers et plus difficiles à manipul
 || *Nom* || [http://www.sparkfun.com/products/246 Optical Detector / Phototransistor - QRD1114] ||
 || *Prix* || 1.13$ (0.86€) ||
 || *Description* || Détecteur de proximité immédiate (0.5 à 3 cm). *Trop court* ||
+
+==== À étudier ====
+
+[http://www.robotroom.com/Sensors.html Quelques référence de capteurs…]
