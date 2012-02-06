@@ -3,7 +3,9 @@
 
 = Introduction =
 
-Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle (moteur par exemple).
+Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle. Il sers généralement à contrôler la vitesse et le sens de rotation de moteurs.
+
+Bla
 
 
 = Références à étudier =
@@ -15,6 +17,15 @@ Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transist
 ==== Quelques références de composants ====
 
 [http://www.telecom-robotics.org/pont_en_H Cette page] présente quelques références de composants pour faire un pont en H.
+
+==== Pont en H Bipolaire ====
+
+[http://ikalogic.com/H_bridge_old.php] Pont en H à transistors bipolaire (à réaliser).
+
+
+= Pont en H =
+
+[http://www.national.com/pf/LM/LMD18200.html LMD18200] Pont en H (3A, 55V, Peak Current 6A)
 
 
 = Drivers de ponts en H =
