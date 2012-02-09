@@ -1,23 +1,46 @@
 #include "taskFlyport.h"
 
+void lireDonnee(char* read)
+{
+	char car;
+	int val;
+	sscanf(read,"%c %i",&car,&val);
+	if ( car == 'D' )//commande de direction
+	{
+		PWMDuty(val, 1);
+	}
+	else if (car == 'V')
+	{
+		PWMDuty(val,2);//commande de vitesse
+		
+	}
+	else 
+	{
+		UARTWrite(1, "commande non valide\n");
+	}
+	
+}
+
 void FlyportTask()
 {
-	int i=0;
 	TCP_SOCKET socketServer = INVALID_SOCKET;
 	BOOL clconn = FALSE;
 	char read[100];
 	int tcprxlength = 0;
-	char car;
-	int val;
+	
 	
     WFConnect(WF_DEFAULT);
     while (WFStatus != CONNECTED);
     UARTWrite(1,"Flyport connected... hello world!\r\n");
+	
+	/*initialisation pins */
     IOInit(d3out,out);
-    //IOPut(d3out, on);
     PWMInit(1,333,50);
     PWMOn(d3out,1);
     
+	IOInit(d2out,out);
+    PWMInit(2,333,50);
+    PWMOn(d2out,2);
 	
     while(1)
     {
@@ -49,16 +72,9 @@ void FlyportTask()
 			if(tcprxlength > 0)
 			{
 				TCPRead(socketServer,read,tcprxlength);
+				lireDonnee(read);
 				UARTWrite(1,read);
-				sscanf(read,"%c %i",&car,&val);
-				if ( car == 'D' )
-				{
-					PWMDuty(val, 1);
-				}
-				else 
-				{
-					UARTWrite(1, "commande non valide\n");
-				}
+				
 			}
 			
 		}
