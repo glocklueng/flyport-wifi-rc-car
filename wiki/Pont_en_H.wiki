@@ -3,12 +3,26 @@
 
 = Introduction =
 
-Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle. Il sers généralement à contrôler la vitesse et le sens de rotation de moteurs.
+Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transistors qui permet de séparer les parties d'alimentation et de commande d'un dipôle. Il sert généralement à contrôler la vitesse et le sens de rotation de moteurs.
 
-Bla
+= Moteur utilisé =
 
+Le moteur utilisé est un _DC Mabuchi RS540RH_. Ses principales caractéristiques sont listées ci-dessous :
+
+|| Tension d'alimentation (V) || C / Hors-charge (A) || C / de blocage (A) ||
+|| 4.5 - 12 || 0.95 || 37.0 ||
 
 = Références à étudier =
+
+==== Driver de moteur DC Intégré ====
+
+Le [http://www.pololu.com/catalog/product/1212 MC33926 Motor Driver Carrier] est une carte implémentant un driver de moteur. Il présente les caractéristiques suivantes :
+ * Tension de sortie de 5 à 28V;
+ * Courant de sortie de 3A (DC), 5A (peak);
+ * Entrées logiques PWM de 3V à 5V;
+ * Sonde de courant proportionnelle;
+ * Protection contre le sur-courant, la sur-température et le sous-voltage.
+
 
 ==== Une réalisation de pont en H ====
 
