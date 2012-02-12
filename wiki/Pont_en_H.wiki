@@ -25,7 +25,7 @@ Le [http://www.pololu.com/catalog/product/1212 MC33926 Motor Driver Carrier] est
  * Sonde de courant proportionnelle;
  * Protection contre le sur-courant, la sur-température et le sous-voltage.
 
-[http://b.pololu-files.com/picture/0J1804.600.jpg?86e4f0e1598b5f996bbd0ecdfcd71b11]
+<img src="http://b.pololu-files.com/picture/0J1804.200.jpg?86e4f0e1598b5f996bbd0ecdfcd71b11" width="50px" />
 
 
 ==== Une réalisation de pont en H ====
