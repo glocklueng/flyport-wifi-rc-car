@@ -9,8 +9,9 @@ Le [http://fr.wikipedia.org/wiki/Pont_en_H pont en H] est un montage à transist
 
 Le moteur utilisé est un _DC Mabuchi RS540RH_. Ses principales caractéristiques sont listées ci-dessous :
 
-|| Tension d'alimentation (V) || C / Hors-charge (A) || C / de blocage (A) ||
-|| 4.5 - 12 || 0.95 || 37.0 ||
+|| || Tension d'alimentation (V) || C / Hors-charge (A) || C / d'efficacité maximale || C / de blocage (A) ||
+|| V,,ALIM,, = 12 V (théorique) || 4.5 - 12 || 0.95 || 5.93 || 37.0 ||
+|| V,,ALIM,, = 8 V (réel) || ~ || 1.42 || ~ || ~ ||
 
 = Références à étudier =
 
