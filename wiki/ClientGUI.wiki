@@ -1,21 +1,13 @@
-#summary Présentation de la version GUI du client PC
-
+#summary Présentation de la version GUI du client PC/Mac
+[http://data.imagup.com/12/1143040127.png]
 = Introduction =
-
 Screenshots de l'interface graphique
-
-
 = Windows =
-
 == Fenêtre principale ==
-<i>A compléter</i>
+[http://flyport-wifi-rc-car.googlecode.com/svn/trunk/Images/screen1.jpg]
 == Fenêtre Réglages ==
-<i>A compléter</i>
-
-
-
+[http://flyport-wifi-rc-car.googlecode.com/svn/trunk/Images/screen2.jpg]
 = Mac =
 <i>A compléter</i>
-
 = Linux =
 <i>A compléter</i>
