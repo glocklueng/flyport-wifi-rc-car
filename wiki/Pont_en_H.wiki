@@ -32,6 +32,10 @@ Ce driver présente un courant de pic suffisant pour démarrer le moteur, un cou
 
 [http://ancrobot.free.fr/Old_version/fichtech/action/ponthII/index.htm Cette page] présente une réalisation d'un pont en H capable de dissiper une grande puissance (courant de plusieurs ampères). On y trouve des références de composants intéressants dans le cadre du projet.
 
+[http://ikalogic.com/h_bridge.php]
+
+[http://www.pyroelectro.com/tutorials/l298_control/schematic.html]
+
 ==== Quelques références de composants ====
 
 [http://www.telecom-robotics.org/pont_en_H Cette page] présente quelques références de composants pour faire un pont en H.
