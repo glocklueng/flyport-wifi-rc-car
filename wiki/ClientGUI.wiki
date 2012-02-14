@@ -1,0 +1,21 @@
+#summary Présentation de la version GUI du client PC
+
+= Introduction =
+
+Screenshots de l'interface graphique
+
+
+= Windows =
+
+== Fenêtre principale ==
+<i>A compléter</i>
+== Fenêtre Réglages ==
+<i>A compléter</i>
+
+
+
+= Mac =
+<i>A compléter</i>
+
+= Linux =
+<i>A compléter</i>
