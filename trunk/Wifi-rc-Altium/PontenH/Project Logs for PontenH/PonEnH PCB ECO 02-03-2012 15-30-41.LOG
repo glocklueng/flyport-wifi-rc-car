@@ -1,0 +1,53 @@
+Added Component: Designator=C1(Capa2_pol)
+Added Component: Designator=C2(CAPA2)
+Added Component: Designator=D1(Ddiode)
+Added Component: Designator=D2(Ddiode)
+Added Component: Designator=D3(Ddiode)
+Added Component: Designator=D4(Ddiode)
+Added Component: Designator=P1(Bornier_2)
+Added Component: Designator=P2(Bornier_2)
+Added Component: Designator=P3(Bornier_2)
+Added Component: Designator=P4(Bornier_2)
+Added Component: Designator=U1(Multiwatt15H)
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=D2-A
+Added Pin To Net: NetName=GND Pin=D4-A
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=GND Pin=P2-2
+Added Pin To Net: NetName=GND Pin=U1-8
+Added Net: Name=GND
+Added Pin To Net: NetName=MOTOR1 Pin=D1-A
+Added Pin To Net: NetName=MOTOR1 Pin=D2-K
+Added Pin To Net: NetName=MOTOR1 Pin=P3-2
+Added Pin To Net: NetName=MOTOR1 Pin=U1-2
+Added Pin To Net: NetName=MOTOR1 Pin=U1-14
+Added Net: Name=MOTOR1
+Added Pin To Net: NetName=MOTOR2 Pin=D3-A
+Added Pin To Net: NetName=MOTOR2 Pin=D4-K
+Added Pin To Net: NetName=MOTOR2 Pin=P3-1
+Added Pin To Net: NetName=MOTOR2 Pin=U1-3
+Added Pin To Net: NetName=MOTOR2 Pin=U1-13
+Added Net: Name=MOTOR2
+Added Pin To Net: NetName=NetP4_1 Pin=P4-1
+Added Pin To Net: NetName=NetP4_1 Pin=U1-7
+Added Pin To Net: NetName=NetP4_1 Pin=U1-10
+Added Net: Name=NetP4_1
+Added Pin To Net: NetName=NetP4_2 Pin=P4-2
+Added Pin To Net: NetName=NetP4_2 Pin=U1-5
+Added Pin To Net: NetName=NetP4_2 Pin=U1-12
+Added Net: Name=NetP4_2
+Added Pin To Net: NetName=VBAT Pin=C1-1
+Added Pin To Net: NetName=VBAT Pin=D1-K
+Added Pin To Net: NetName=VBAT Pin=D3-K
+Added Pin To Net: NetName=VBAT Pin=P2-1
+Added Pin To Net: NetName=VBAT Pin=U1-4
+Added Net: Name=VBAT
+Added Pin To Net: NetName=VCC Pin=C2-1
+Added Pin To Net: NetName=VCC Pin=P1-1
+Added Pin To Net: NetName=VCC Pin=U1-6
+Added Pin To Net: NetName=VCC Pin=U1-9
+Added Pin To Net: NetName=VCC Pin=U1-11
+Added Net: Name=VCC
+Added Class: Name=L298
+Added Room: Name=L298
