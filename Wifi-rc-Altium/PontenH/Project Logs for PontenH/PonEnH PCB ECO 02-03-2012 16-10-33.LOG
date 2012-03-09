@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=P1 NewDesignator=Palim5v1
+Change Component Designator: OldDesignator=P2 NewDesignator=Pbat2
+Change Component Designator: OldDesignator=P3 NewDesignator=Pmotor3
+Change Component Designator: OldDesignator=P4 NewDesignator=Ppwm4
+Change Net Name : Old Net Name=NetP4_1 New Net Name=NetPpwm4_1
+Change Net Name : Old Net Name=NetP4_2 New Net Name=NetPpwm4_2
