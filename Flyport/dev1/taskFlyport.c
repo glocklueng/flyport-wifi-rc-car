@@ -1,25 +1,9 @@
 #include "taskFlyport.h"
 
-void lireDonnee(char* read)
-{
-	char car;
-	int val;
-	sscanf(read,"%c %i",&car,&val);
-	if ( car == 'D' )//commande de direction
-	{
-		PWMDuty(val, 1);
-	}
-	else if (car == 'V')
-	{
-		PWMDuty(val,2);//commande de vitesse
-		
-	}
-	else 
-	{
-		UARTWrite(1, "commande non valide\n");
-	}
-	
-}
+
+int convert( int val );
+void lireDonnee(char* read);
+
 
 void FlyportTask()
 {
@@ -33,14 +17,18 @@ void FlyportTask()
     while (WFStatus != CONNECTED);
     UARTWrite(1,"Flyport connected... hello world!\r\n");
 	
+	char chaine[20];
+	IPAddressToString(AppConfig.MyIPAddr, chaine);
+	UARTWrite(1,chaine);
+	
 	/*initialisation pins */
-    IOInit(d3out,out);
-    PWMInit(1,333,50);
-    PWMOn(d3out,1);
+    IOInit(d3out,out);//direction
+    PWMInit(1,333,49);
+    //PWMOn(d3out,1);
     
-	IOInit(d2out,out);
+	IOInit(d2out,out);//vitesse
     PWMInit(2,333,50);
-    PWMOn(d2out,2);
+    //PWMOn(d2out,2);
 	
     while(1)
     {
@@ -58,6 +46,8 @@ void FlyportTask()
 			{
 				clconn = FALSE;
 				IOPut(D4Out,off);
+				PWMOff(1);
+				PWMOff(2);
 			}
 		}
 		
@@ -78,18 +68,66 @@ void FlyportTask()
 			}
 			
 		}
-
-		/*	
-        if (i==1) 
-		{
-			i=0;
-			PWMDuty(80, 1);
-		}
-		else if (i==0) 
-		{
-			i=1;
-			PWMDuty(20, 1);
-		}
-        vTaskDelay(100);*/
     }
+}
+
+int convert( int val )//conversion 0->100 => 20->80
+{
+	if (val <0)
+		val = 0;
+		
+	if (val > 100)
+		val =100;
+		
+	return val*60/100 +20;
+		
+}
+
+void lireDonnee(char* read)
+{
+	char car;
+	int val;
+	sscanf(read,"%c%i",&car,&val);
+	//sscanf(read,"%i",&val);
+	//car = 'D';
+	if ( car == 'D' || car == 'd' )//commande de direction// droite
+	{
+		//PWMDuty(convert(val),1);
+		PWMOn(d3out,1);
+		PWMDuty(61,1);
+		//DelayMs(100);
+		//PWMOff(1);
+	}
+	else if ( car == 'G' || car == 'g' )//gauche
+	{
+		PWMOn(d3out,1);
+		PWMDuty(37,1);
+	}
+	else if ( car == '/' )//avant droit
+	{
+		PWMOn(d3out,1);
+		PWMDuty(55,1);
+	}
+	else if ( car == '\\' )//avant gauche
+	{
+		PWMOn(d3out,1);
+		PWMDuty(43,1);
+	}
+	else if ( car == '|' )//tout droit
+	{
+		PWMOn(d3out,1);
+		PWMDuty(49,1);
+		vTaskDelay(20);
+		PWMOff(1);
+	}
+	else if (car == 'V')
+	{
+		PWMDuty(val,2);//commande de vitesse
+		
+	}
+	else 
+	{
+		UARTWrite(1, "commande non valide\n");
+	}
+	
 }
