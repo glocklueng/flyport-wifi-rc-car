@@ -1,0 +1,26 @@
+Added Component: Designator=P2(HDR2X13)
+Added Pin To Net: NetName=I2C_CLK Pin=P2-1
+Added Pin To Net: NetName=I2C_DATA Pin=P2-3
+Added Pin To Net: NetName=PWM1 Pin=P2-4
+Added Pin To Net: NetName=IN1 Pin=P2-5
+Added Pin To Net: NetName=PWM_SERVO Pin=P2-6
+Added Pin To Net: NetName=IN2 Pin=P2-7
+Added Pin To Net: NetName=SPI_CLK_8 Pin=P2-8
+Added Pin To Net: NetName=IN3 Pin=P2-9
+Added Pin To Net: NetName=SPI_OUT_10 Pin=P2-10
+Added Pin To Net: NetName=SPI_IN_12 Pin=P2-12
+Added Pin To Net: NetName=RX Pin=P2-13
+Added Pin To Net: NetName=SPI_CS_14 Pin=P2-14
+Added Pin To Net: NetName=TX Pin=P2-15
+Added Pin To Net: NetName=V_5V_FPT Pin=P2-16
+Added Pin To Net: NetName=OUT3_PWM Pin=P2-17
+Added Pin To Net: NetName=AN4_18 Pin=P2-18
+Added Pin To Net: NetName=BOARD_LED Pin=P2-19
+Added Pin To Net: NetName=AN5_20 Pin=P2-20
+Added Pin To Net: NetName=PWM2 Pin=P2-21
+Added Pin To Net: NetName=GND Pin=P2-22
+Added Pin To Net: NetName=AN1_23 Pin=P2-23
+Added Pin To Net: NetName=3V3FLYPORT Pin=P2-24
+Added Pin To Net: NetName=RST_B Pin=P2-26
+Added Member To Class: ClassName=L298 Member=Component P2 Header 13X2
+Added Room: Name=L298

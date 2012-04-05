@@ -1,0 +1,5 @@
+Added Component: Designator=P7(Bornier_3)
+Added Pin To Net: NetName=I2C_CLK Pin=P7-1
+Added Pin To Net: NetName=I2C_DATA Pin=P7-2
+Added Pin To Net: NetName=SPI_CS_14 Pin=P7-3
+Added Member To Class: ClassName=L298 Member=Component P7 Bornier_3
