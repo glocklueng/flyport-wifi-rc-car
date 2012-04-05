@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetPoignard 1_1 Pin=Poignard 1-1
+Removed Pin From Net: NetName=EN Pin=Poignard 2-1
+Removed Member From Class: ClassName=L298 Member=Poignard 1
+Removed Member From Class: ClassName=L298 Member=Poignard 2
+Change Net Name : Old Net Name=NetPoignard 1_1 New Net Name=NetR3_1
+Added Room: Name=L298

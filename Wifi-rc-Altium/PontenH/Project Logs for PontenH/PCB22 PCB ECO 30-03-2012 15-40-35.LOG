@@ -1,0 +1,30 @@
+Added Component: Designator=P3(Bornier_3)
+Added Component: Designator=P4(Bornier_3)
+Added Component: Designator=P5(Bornier_3)
+Added Component: Designator=P6(Bornier_3)
+Added Component: Designator=P7(Bornier_3)
+Added Component: Designator=P8(Bornier_3)
+Added Pin To Net: NetName=AN5_20 Pin=P3-1
+Added Pin To Net: NetName=OUT3_PWM Pin=P3-2
+Added Pin To Net: NetName=AN4_18 Pin=P3-3
+Added Pin To Net: NetName=IN3 Pin=P4-1
+Added Pin To Net: NetName=SPI_CLK_8 Pin=P4-2
+Added Pin To Net: NetName=IN2 Pin=P4-3
+Added Pin To Net: NetName=TX Pin=P5-1
+Added Pin To Net: NetName=V_5V_FPT Pin=P5-2
+Added Pin To Net: NetName=RX Pin=P5-3
+Added Pin To Net: NetName=SPI_CS_14 Pin=P6-1
+Added Pin To Net: NetName=SPI_IN_12 Pin=P6-2
+Added Pin To Net: NetName=SPI_OUT_10 Pin=P6-3
+Added Pin To Net: NetName=IN1 Pin=P7-1
+Added Pin To Net: NetName=I2C_DATA Pin=P7-2
+Added Pin To Net: NetName=I2C_CLK Pin=P7-3
+Added Pin To Net: NetName=3V3FLYPORT Pin=P8-1
+Added Pin To Net: NetName=AN1_23 Pin=P8-2
+Added Pin To Net: NetName=GND Pin=P8-3
+Added Member To Class: ClassName=L298 Member=Component P3 Bornier_3
+Added Member To Class: ClassName=L298 Member=Component P4 Bornier_3
+Added Member To Class: ClassName=L298 Member=Component P5 Bornier_3
+Added Member To Class: ClassName=L298 Member=Component P6 Bornier_3
+Added Member To Class: ClassName=L298 Member=Component P7 Bornier_3
+Added Member To Class: ClassName=L298 Member=Component P8 Bornier_3

@@ -1,0 +1,6 @@
+Added Component: Designator=P4(Bornier_3)
+Added Pin To Net: NetName=IN1 Pin=P4-1
+Added Pin To Net: NetName=IN2 Pin=P4-2
+Added Pin To Net: NetName=IN3 Pin=P4-3
+Added Member To Class: ClassName=L298 Member=Component P4 Bornier_3
+Added Room: Name=L298

@@ -1,0 +1,13 @@
+Added Component: Designator=P1(Bornier_3)
+Added Component: Designator=Palim9v(Bornier_2)
+Added Component: Designator=Pbat(Bornier_2)
+Added Pin To Net: NetName=V_5V_SERVO Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=PWM_SERVO Pin=P1-3
+Added Pin To Net: NetName=V_9V_BORNIER Pin=Palim9v-1
+Added Pin To Net: NetName=GND Pin=Palim9v-2
+Added Pin To Net: NetName=V_BAT_BORNIER Pin=Pbat-1
+Added Pin To Net: NetName=GND Pin=Pbat-2
+Added Member To Class: ClassName=L298 Member=Component P1 Bornier Servomoteur
+Added Member To Class: ClassName=L298 Member=Component Palim9v Alim 9V
+Added Member To Class: ClassName=L298 Member=Component Pbat Batterie

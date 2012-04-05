@@ -1,0 +1,11 @@
+Added Component: Designator=U2(DIP8)
+Added Pin To Net: NetName=GND Pin=U2-1
+Added Pin To Net: NetName=NetR2_2 Pin=U2-2
+Added Pin To Net: NetName=NetPoignard 1_1 Pin=U2-3
+Added Pin To Net: NetName=GND Pin=U2-4
+Added Pin To Net: NetName=NetU2_5 Pin=U2-5
+Added Pin To Net: NetName=NetU2_5 Pin=U2-6
+Added Pin To Net: NetName=EN Pin=U2-7
+Added Pin To Net: NetName=V_5V_FPT Pin=U2-8
+Added Member To Class: ClassName=L298 Member=Component U2 LM311N
+Added Room: Name=L298
