@@ -1,0 +1,63 @@
+Added Component: Designator=C1(Capa2_pol)
+Added Component: Designator=D1(Ddiode)
+Added Component: Designator=D2(Ddiode)
+Added Component: Designator=D3(Ddiode)
+Added Component: Designator=D4(Ddiode)
+Added Component: Designator=Doui1(Douille-2mm)
+Added Component: Designator=Doui2(Douille-2mm)
+Added Component: Designator=P?(HDR1X7)
+Added Component: Designator=Pbat(Bornier_2)
+Added Component: Designator=Poignard 1(Poignard)
+Added Component: Designator=R3(res5_1/4W)
+Added Component: Designator=U1(Multiwatt15V)
+Added Pin To Net: NetName=EN Pin=P?-6
+Added Pin To Net: NetName=EN Pin=U1-6
+Added Pin To Net: NetName=EN Pin=U1-11
+Added Net: Name=EN
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Pin To Net: NetName=GND Pin=D2-A
+Added Pin To Net: NetName=GND Pin=D4-A
+Added Pin To Net: NetName=GND Pin=P?-2
+Added Pin To Net: NetName=GND Pin=Pbat-2
+Added Pin To Net: NetName=GND Pin=R3-2
+Added Pin To Net: NetName=GND Pin=U1-8
+Added Net: Name=GND
+Added Pin To Net: NetName=MOTOR1 Pin=D1-A
+Added Pin To Net: NetName=MOTOR1 Pin=D2-K
+Added Pin To Net: NetName=MOTOR1 Pin=Doui1-1
+Added Pin To Net: NetName=MOTOR1 Pin=U1-2
+Added Pin To Net: NetName=MOTOR1 Pin=U1-14
+Added Net: Name=MOTOR1
+Added Pin To Net: NetName=MOTOR2 Pin=D3-A
+Added Pin To Net: NetName=MOTOR2 Pin=D4-K
+Added Pin To Net: NetName=MOTOR2 Pin=Doui2-1
+Added Pin To Net: NetName=MOTOR2 Pin=U1-3
+Added Pin To Net: NetName=MOTOR2 Pin=U1-13
+Added Net: Name=MOTOR2
+Added Pin To Net: NetName=PWM1 Pin=P?-4
+Added Pin To Net: NetName=PWM1 Pin=U1-5
+Added Pin To Net: NetName=PWM1 Pin=U1-12
+Added Net: Name=PWM1
+Added Pin To Net: NetName=PWM2 Pin=P?-5
+Added Pin To Net: NetName=PWM2 Pin=U1-7
+Added Pin To Net: NetName=PWM2 Pin=U1-10
+Added Net: Name=PWM2
+Added Pin To Net: NetName=SENSE Pin=P?-7
+Added Pin To Net: NetName=SENSE Pin=Poignard 1-1
+Added Pin To Net: NetName=SENSE Pin=R3-1
+Added Pin To Net: NetName=SENSE Pin=U1-1
+Added Pin To Net: NetName=SENSE Pin=U1-15
+Added Net: Name=SENSE
+Added Pin To Net: NetName=V_5V_FPT Pin=P?-3
+Added Pin To Net: NetName=V_5V_FPT Pin=U1-9
+Added Net: Name=V_5V_FPT
+Added Pin To Net: NetName=V_BAT_BORNIER Pin=C1-1
+Added Pin To Net: NetName=V_BAT_BORNIER Pin=P?-1
+Added Pin To Net: NetName=V_BAT_BORNIER Pin=Pbat-1
+Added Net: Name=V_BAT_BORNIER
+Added Pin To Net: NetName=V_BAT Pin=D1-K
+Added Pin To Net: NetName=V_BAT Pin=D3-K
+Added Pin To Net: NetName=V_BAT Pin=U1-4
+Added Net: Name=V_BAT
+Added Class: Name=L298
+Added Room: Name=L298

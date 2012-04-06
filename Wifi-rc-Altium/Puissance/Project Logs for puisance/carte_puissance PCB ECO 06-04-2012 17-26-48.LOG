@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=PWM1 Pin=P?-5
+Removed Pin From Net: NetName=EN Pin=P?-6
+Added Pin To Net: NetName=EN Pin=P?-5
+Added Pin To Net: NetName=PWM1 Pin=P?-6
+Added Room: Name=L298
