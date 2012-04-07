@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=V_9V_BORNIER Pin=P10-1
+Removed Pin From Net: NetName=V_9V Pin=P10-2
+Removed Member From Class: ClassName=MainBoard_Schematic Member=P10
+Added Room: Name=MainBoard_Schematic
