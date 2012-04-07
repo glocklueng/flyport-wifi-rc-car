@@ -1,0 +1,13 @@
+Added Component: Designator=P?(HDR1X7)
+Added Component: Designator=Poignard 2(Poignard)
+Added Pin To Net: NetName=PWM1 Pin=P?-1
+Added Pin To Net: NetName=PWM2 Pin=P?-2
+Added Pin To Net: NetName=EN Pin=P?-3
+Added Pin To Net: NetName=GND Pin=P?-4
+Added Pin To Net: NetName=V_5V_FPT Pin=P?-5
+Added Pin To Net: NetName=CURRENT_SENSE Pin=P?-6
+Added Pin To Net: NetName=V_BAT Pin=P?-7
+Added Pin To Net: NetName=EN Pin=Poignard 2-1
+Added Member To Class: ClassName=MainBoard_Schematic Member=Component P? Header 7
+Added Member To Class: ClassName=MainBoard_Schematic Member=Component Poignard 2 Poignard
+Added Room: Name=MainBoard_Schematic

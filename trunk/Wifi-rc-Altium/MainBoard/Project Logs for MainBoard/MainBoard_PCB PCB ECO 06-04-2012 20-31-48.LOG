@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=SPI_OUT_10 Pin=P4-1
+Added Pin To Net: NetName=IN2 Pin=P4-2
+Added Pin To Net: NetName=SPI_CLK_8 Pin=P4-3
+Added Room: Name=MainBoard_Schematic
