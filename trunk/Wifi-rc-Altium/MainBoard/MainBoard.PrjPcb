@@ -70,6 +70,10 @@ DItemRevisionGUID=
 DocumentPath=Project Outputs for MainBoard\Footprint Comparison - MainBoard_PCB.html
 DItemRevisionGUID=
 
+[GeneratedDocument3]
+DocumentPath=Project Outputs for MainBoard\Move Component(s) Origin To Grid - MainBoard_PCB.html
+DItemRevisionGUID=
+
 [PCBConfiguration1]
 ReleaseItemId=
 CurrentRevision=
