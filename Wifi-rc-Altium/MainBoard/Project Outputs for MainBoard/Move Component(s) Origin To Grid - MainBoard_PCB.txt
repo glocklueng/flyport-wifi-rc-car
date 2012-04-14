@@ -1,0 +1,5 @@
+Move Component Origin to Grid
+Filename     : \\VBOXSVR\Guillaume\Desktop\1A PHELMA\Projets de groupe\Subversion\trunk\Wifi-rc-Altium\MainBoard\MainBoard_PCB.PcbDoc
+Date         : 14/04/2012
+Time         : 02:01:58
+Time Elapsed : 00:00:00
