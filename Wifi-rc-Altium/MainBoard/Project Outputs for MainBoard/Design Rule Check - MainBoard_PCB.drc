@@ -1,10 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : \\VBOXSVR\Guillaume\Desktop\1A PHELMA\Projets de groupe\Subversion\trunk\Wifi-rc-Altium\MainBoard\MainBoard_PCB.PcbDoc
-Date     : 08/04/2012
-Time     : 02:14:17
-
-Processing Rule : Clearance Constraint (Gap=10mil) (OnLayer('Top Overlay')),(OnLayer('Top Overlay'))
-Rule Violations :0
+Date     : 18/04/2012
+Time     : 00:16:13
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
@@ -13,12 +10,12 @@ Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silkscreen Over Component Pads (Clearance=10mil) (All),(All)
-   Violation between Pad D5-1(4504.002mil,4284.45mil)  Multi-Layer and 
-                     Arc (4504mil,4224.449mil)  Top Overlay
-   Violation between Pad R2-2(3734.648mil,3102.954mil)  Multi-Layer and 
-                     Arc (3734.646mil,3302.953mil)  Top Overlay
-   Violation between Track (4444.002mil,4144.45mil)(4564.002mil,4144.45mil)  Top Overlay and 
-                     Pad D5-2(4504.002mil,4184.45mil)  Multi-Layer
+   Violation between Pad D5-1(4503.939mil,4254.922mil)  Multi-Layer and 
+                     Arc (4503.937mil,4194.92mil)  Top Overlay
+   Violation between Pad R2-2(3714.963mil,3083.269mil)  Multi-Layer and 
+                     Arc (3714.961mil,3283.268mil)  Top Overlay
+   Violation between Track (4443.939mil,4114.922mil)(4563.939mil,4114.922mil)  Top Overlay and 
+                     Pad D5-2(4503.939mil,4154.922mil)  Multi-Layer
    Violation between Track (2293.308mil,4632.874mil)(2293.308mil,4876.968mil)  Top Overlay and 
                      Pad S1-1(2259.844mil,4882.874mil)  Multi-Layer
    Violation between Track (2049.212mil,4876.968mil)(2293.308mil,4876.968mil)  Top Overlay and 
@@ -35,10 +32,10 @@ Processing Rule : Silkscreen Over Component Pads (Clearance=10mil) (All),(All)
                      Pad S1-4(2082.678mil,4626.968mil)  Multi-Layer
    Violation between Track (2049.212mil,4632.874mil)(2293.308mil,4632.874mil)  Top Overlay and 
                      Pad S1-4(2082.678mil,4626.968mil)  Multi-Layer
-   Violation between Track (3574.648mil,3502.954mil)(3894.648mil,3502.954mil)  Top Overlay and 
-                     Pad R2-1(3834.648mil,3502.954mil)  Multi-Layer
-   Violation between Track (3574.648mil,3502.954mil)(3894.648mil,3502.954mil)  Top Overlay and 
-                     Pad R2-3(3634.648mil,3502.954mil)  Multi-Layer
+   Violation between Track (3554.963mil,3483.269mil)(3874.963mil,3483.269mil)  Top Overlay and 
+                     Pad R2-1(3814.963mil,3483.269mil)  Multi-Layer
+   Violation between Track (3554.963mil,3483.269mil)(3874.963mil,3483.269mil)  Top Overlay and 
+                     Pad R2-3(3614.963mil,3483.269mil)  Multi-Layer
    Violation between Track (4533.937mil,3516.142mil)(4533.937mil,3916.142mil)  Top Overlay and 
                      Pad CMP-1(4503.937mil,3866.142mil)  Multi-Layer
    Violation between Track (4533.937mil,3516.142mil)(4533.937mil,3916.142mil)  Top Overlay and 
@@ -70,20 +67,38 @@ Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=15mil) (Max=30mil) (Preferred=20mil) (All)
-Rule Violations :0
+   Violation between Width Constraint: Track (1000mil,1810mil)(1000mil,5171.417mil)  Top Layer
+   Violation between Width Constraint: Track (5850mil,1810mil)(5850mil,5171.417mil)  Top Layer
+   Violation between Width Constraint: Track (1000mil,5161.417mil)(3233.052mil,5161.417mil)  Top Layer
+   Violation between Width Constraint: Track (3584.948mil,5161.417mil)(5850mil,5161.417mil)  Top Layer
+   Violation between Width Constraint: Track (1000mil,5161.417mil)(1060mil,5141.417mil)  Top Layer
+   Violation between Width Constraint: Track (1000mil,5161.417mil)(1060mil,5181.417mil)  Top Layer
+   Violation between Width Constraint: Track (5790mil,5181.417mil)(5850mil,5161.417mil)  Top Layer
+   Violation between Width Constraint: Track (5790mil,5141.417mil)(5850mil,5161.417mil)  Top Layer
+   Violation between Width Constraint: Track (5860mil,4950mil)(6158.622mil,4950mil)  Top Layer
+   Violation between Width Constraint: Track (5860mil,1800mil)(6158.622mil,1800mil)  Top Layer
+   Violation between Width Constraint: Track (6148.622mil,3504.958mil)(6148.622mil,4950mil)  Top Layer
+   Violation between Width Constraint: Track (6148.622mil,1800mil)(6148.622mil,3213.042mil)  Top Layer
+   Violation between Width Constraint: Track (6128.622mil,4890mil)(6148.622mil,4950mil)  Top Layer
+   Violation between Width Constraint: Track (6148.622mil,4950mil)(6168.622mil,4890mil)  Top Layer
+   Violation between Width Constraint: Track (6148.622mil,1800mil)(6168.622mil,1860mil)  Top Layer
+   Violation between Width Constraint: Track (6128.622mil,1860mil)(6148.622mil,1800mil)  Top Layer
+Rule Violations :16
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=20mil) (Air Gap=10mil) (Entries=4) (All)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=12mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-Rule Violations :0
+   Violation between Un-Routed Net Constraint: Net PWM2 Between Track on layer Bottom Layer (2369.586,2381.398mil) And Pad Free-4 (5643.701,2380.907mil)
+   Violation between Un-Routed Net Constraint: Net PWM1 Between Track on layer Bottom Layer (3296.076,3255.906mil) And Track on layer Bottom Layer (4195.866,3255.906mil)
+Rule Violations :2
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 
-Violations Detected : 21
-Time Elapsed        : 00:00:00
+Violations Detected : 39
+Time Elapsed        : 00:00:01
