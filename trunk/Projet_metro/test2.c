@@ -16,7 +16,8 @@ int main()
 	afficher(plan, nbStation);
 
 	ListeRes resultat = NULL;
-	resultat = astar(122, 508, plan);
+	puts("aStar ...");
+	resultat = aStar(122, 508, plan);
 	afficherRes(resultat,plan);
 
 	return 0; 

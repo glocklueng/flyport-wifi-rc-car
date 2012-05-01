@@ -7,15 +7,17 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 	ListeArcs s = NULL;
 	ListeRes res = NULL;
 	ListeSouv souvenir = NULL;
-	int tentativeCscore, tentativeIsBetter;
+	double tentativeCscore;
+	int tentativeIsBetter;
 
 	/*On ajoute le premier point à la liste ouverte, a est donc nul*/
 	open = setData(open, numDep, 0, heuristic(numDep,numArr,plan));
-	
+
 	/*Tant que la liste ouverte n'est pas nulle, on prend le point qui a le meilleur cout*/
 	while (open != NULL)
 	{
 		k  = getLowestC(open);
+		puts("1");///DEBUG
 
 		if (k.num == numArr)//si on est arrivé
 		{
@@ -25,11 +27,13 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 			suppSouv(souvenir);
 			return res;
 		}
-		open = remove(open,k.num);//inutile ou pas, suivant ce que fait getLowestC()
+		open = removeData(open,k.num);//inutile ou pas, suivant ce que fait getLowestC()
+		puts("2"); ///DEBUG
 		/*On ajoute ce point dans la liste fermée*/
 		close = setData(close, k.num, k.a, k.h); //la copie de a,h et c est inutile : à améliorer par la suite
 
 		s = plan[k.num].arcs; // = la liste de ses fils
+		afficherListeArcs(s); ///DEBUG
 		/* Pour tout les fils s de k*/
 		while (s != NULL)
 		{
@@ -51,17 +55,53 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 			{
 				tentativeIsBetter = 0;
 			}
-			
+
 			if (tentativeIsBetter)
 			{
 				souvenir = ajouterSouv(souvenir, s->num, k.num);
 				open = setData(open, s->num, tentativeCscore, heuristic(s->num, numArr, plan));
 			}
-			
+
 			s = s->next;
 		}
 	}
 	return NULL;
+}
+
+Data getLowestC(ListeData open)
+{
+    ListeData p = open;
+    Data dataMin = *p;
+    double cMin = p->c;
+    while (p != NULL)
+    {
+        if ( p->c < cMin)
+        {
+			cMin = p->c;
+			dataMin = *p;
+		}
+        p = p->next;
+    }
+    return dataMin;
+}
+
+ListeData removeData(ListeData list ,int num) // Par recurrence : inutile, à changer !!
+{
+	if(list == NULL)
+        return NULL;
+
+    if(list->num == num)
+    {
+        ListeData  tmp = list->next;
+        free(list);
+        tmp = removeData(tmp, num);
+        return tmp;
+    }
+    else
+    {
+        list->next = removeData(list, num);
+        return list;
+    }
 }
 
 ListeRes reconstruire(ListeSouv souv, int numDep, int numArr)
@@ -79,15 +119,23 @@ ListeRes reconstruire(ListeSouv souv, int numDep, int numArr)
     return p;
 }
 
-int heuristic(int numDep,int numArr,Station * plan)
+double absDouble( double a)
 {
-	int xDep,yDep,xArr,yArr;
+	if (a <0)
+		return -a;
+	else
+		return a;
+	}
+
+double heuristic(int numDep,int numArr,Station * plan)
+{
+	double xDep,yDep,xArr,yArr;
 	xDep = plan[numDep].lat;
 	yDep = plan[numDep].lon;
 	xArr = plan[numArr].lat;
 	yArr = plan[numArr].lon;
-
-	return (abs(xDep-xArr)+abs(yDep-yArr));
+	printf("heuristic : %lf\n",(absDouble(xDep-xArr)+absDouble(yDep-yArr)));///DEBUG
+	return (absDouble(xDep-xArr)+absDouble(yDep-yArr));
 }
 
 ListeRes ajouterRes( ListeRes l, int num)
@@ -97,8 +145,20 @@ ListeRes ajouterRes( ListeRes l, int num)
 		return p;
 	p->num = num;
 	p->next = l;
-	
-	return p;	
+
+	return p;
+}
+
+void suppRes(ListeRes list)
+{
+	ListeRes buff;
+    while(list != NULL)
+    {
+        buff = list->next;
+        free(list);
+        list = buff;
+    }
+
 }
 
 ListeSouv ajouterSouv( ListeSouv l, int numFils, int numPere)
@@ -109,17 +169,29 @@ ListeSouv ajouterSouv( ListeSouv l, int numFils, int numPere)
 	p->num = numFils;
 	p->numPere = numPere;
 	p->next = l;
-	
-	return p;	
+
+	return p;
 }
 
-ListeData setData(ListeData l, int num , int a , int h)
+void suppSouv(ListeSouv list)
+{
+	ListeSouv  buff;
+    while(list != NULL)
+    {
+        buff = list->next;
+        free(list);
+        list = buff;
+    }
+
+}
+
+ListeData setData(ListeData l, int num , double a , double h)
 {
 	ListeData p = l;
 	while ( p != NULL )
 	{
 		if ( p->num == num)
-		{ 
+		{
 			p->a = a;
 			p->h = h;
 			p->c = a+h;
@@ -137,6 +209,18 @@ ListeData setData(ListeData l, int num , int a , int h)
 	return nouveau;
 }
 
+void suppData(ListeData list)
+{
+	ListeData buff;
+    while(list != NULL)
+    {
+        buff = list->next;
+        free(list);
+        list = buff;
+    }
+
+}
+
 int isInListe(ListeData l,int num)
 {
 	ListeData p = l;
@@ -151,7 +235,7 @@ int isInListe(ListeData l,int num)
 	return 0;
 }
 
-int getCscore(ListeData l,int num)
+double getCscore(ListeData l,int num)
 {
 	ListeData p = l;
 	while ( p != NULL)
@@ -165,6 +249,35 @@ int getCscore(ListeData l,int num)
 	return -1;
 }
 
+int getSouv(ListeSouv l, int num)
+{
+	ListeSouv p = l;
+	while ( p != NULL)
+	{
+		if ( p->num == num)
+		{
+			return p->numPere;
+		}
+		p = p->next;
+	}
+	return -1;
+	
+}
+
+void afficherRes(ListeRes resultat, Station * plan)
+{
+	ListeRes p = resultat;
+	Station  station;
+	while ( p != NULL)
+	{
+		station = plan[p->num];
+		printf("%i  %lf   %lf   %s   %s\n",station.num, station.lat, station.lon, station.nom, station.line);
+		p = p->next;
+	}
+}
+
+	
+	
 
 
 
