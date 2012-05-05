@@ -1,8 +1,0 @@
-Added Component: Designator=R4(res5_1/4W)
-Added Component: Designator=S1(SW_BP)
-Added Pin To Net: NetName=3V3FLYPORT Pin=R4-1
-Added Pin To Net: NetName=RST_B Pin=R4-2
-Added Pin To Net: NetName=GND Pin=S1-1
-Added Pin To Net: NetName=RST_B Pin=S1-4
-Added Member To Class: ClassName=MainBoard_Schematic Member=Component R4 Res2
-Added Member To Class: ClassName=MainBoard_Schematic Member=Component S1 SW-PB
