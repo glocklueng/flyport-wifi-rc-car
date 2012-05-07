@@ -9,6 +9,7 @@ int main()
 {
 	int nbStation;
 	char nom[] =  "graphes/metro2012.csv";
+	//char nom[] = "graphes/graphe1_2012.csv";
 	Station * plan = NULL;
 	puts("lecture ...");
 	plan = lecture(nom, &nbStation);
@@ -17,8 +18,10 @@ int main()
 
 	ListeRes resultat = NULL;
 	puts("aStar ...");
-	resultat = aStar(122, 508, plan);
+	resultat = aStar(121, 236, plan);
+	//resultat = aStar(2, 5, plan);
 	afficherRes(resultat,plan);
+	puts("fini ...");
 
-	return 0; 
+	return 0;
 }
