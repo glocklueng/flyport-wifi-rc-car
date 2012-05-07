@@ -17,10 +17,11 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 	while (open != NULL)
 	{
 		k  = getLowestC(open);
-		puts("1");///DEBUG
-
+		//puts("1");///DEBUG
+        //printf("k = %i\n", k.num);
 		if (k.num == numArr)//si on est arrivé
 		{
+		    //puts("trouve ...");///DEBUG
 			res = reconstruire(souvenir, numDep, numArr);//reconstruction du chemin grace a la liste souv
 			suppData(open);
 			suppData(close);
@@ -28,14 +29,14 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 			return res;
 		}
 		open = removeData(open,k.num);//inutile ou pas, suivant ce que fait getLowestC()
-		puts("2"); ///DEBUG
+		//puts("2"); ///DEBUG
 		/*On ajoute ce point dans la liste fermée*/
 		close = setData(close, k.num, k.a, k.h); //la copie de a,h et c est inutile : à améliorer par la suite
 
-		s = plan[k.num].arcs; // = la liste de ses fils
-		afficherListeArcs(s); ///DEBUG
+		//s = plan[k.num].arcs; // = la liste de ses fils
+		//afficherListeArcs(s); ///DEBUG
 		/* Pour tout les fils s de k*/
-		while (s != NULL)
+		for (s = s = plan[k.num].arcs ; s != NULL ; s = s->next)
 		{
 			if (isInListe(close,s->num))
 				continue; //on passe au fis suivant
@@ -62,7 +63,7 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 				open = setData(open, s->num, tentativeCscore, heuristic(s->num, numArr, plan));
 			}
 
-			s = s->next;
+			//s = s->next;
 		}
 	}
 	return NULL;
@@ -99,10 +100,34 @@ ListeData removeData(ListeData list ,int num) // Par recurrence : inutile, à ch
     }
     else
     {
-        list->next = removeData(list, num);
+        list->next = removeData(list->next, num);
         return list;
     }
 }
+
+/*ListeData removeData(ListeData list ,int num)
+{
+	ListeData p = list;
+	ListeData tmp = NULL;
+	if (p != NULL)
+		return NULL;
+	ListeData q = list->next;
+	while (q != NULL)
+	{
+		if ( q->num == num )
+		{
+			p->next = q->next;
+			free(q);
+
+		}
+
+		p = p->next;
+		q = q->next;
+	}
+return list;
+
+
+}*/
 
 ListeRes reconstruire(ListeSouv souv, int numDep, int numArr)
 {
@@ -134,8 +159,8 @@ double heuristic(int numDep,int numArr,Station * plan)
 	yDep = plan[numDep].lon;
 	xArr = plan[numArr].lat;
 	yArr = plan[numArr].lon;
-	printf("heuristic : %lf\n",(absDouble(xDep-xArr)+absDouble(yDep-yArr)));///DEBUG
-	return (absDouble(xDep-xArr)+absDouble(yDep-yArr));
+	//printf("heuristic : %lf\n",(absDouble(xDep-xArr)+absDouble(yDep-yArr)));///DEBUG
+	return (absDouble(xDep-xArr)+absDouble(yDep-yArr))/2;
 }
 
 ListeRes ajouterRes( ListeRes l, int num)
@@ -261,23 +286,39 @@ int getSouv(ListeSouv l, int num)
 		p = p->next;
 	}
 	return -1;
-	
+
 }
 
 void afficherRes(ListeRes resultat, Station * plan)
 {
 	ListeRes p = resultat;
 	Station  station;
+    ListeArcs liaisons = NULL;
 	while ( p != NULL)
 	{
 		station = plan[p->num];
+		/*Affichage des données de la station*/
 		printf("%i  %lf   %lf   %s   %s\n",station.num, station.lat, station.lon, station.nom, station.line);
+		/*Afiichage du cout entre deux stations*/
+        if (p->next != NULL)
+        {
+            liaisons = plan[p->num].arcs;
+            /*On se place au bon endroit sur la liste des arcs*/
+            while (liaisons != NULL)
+            {
+                if ( liaisons->num == p->next->num)
+                    break;
+                liaisons = liaisons ->next;
+            }
+            /*Et on affiche le cout*/
+            printf("---->%lf\n", liaisons->cout);
+        }
 		p = p->next;
 	}
 }
 
-	
-	
+
+
 
 
 
