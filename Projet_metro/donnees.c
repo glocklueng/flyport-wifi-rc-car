@@ -9,8 +9,8 @@ ListeArcs ajoutTete( ListeArcs l, Arc arc)
 	p->num = arc.num;
 	p->cout = arc.cout;
 	p->next = l;
-	
-	return p;	
+
+	return p;
 }
 
 ListeArcs suppTete( ListeArcs l )
@@ -22,6 +22,16 @@ ListeArcs suppTete( ListeArcs l )
 	free(l);
 	return p;
 }
+/*
+void * suppTete( void * l )
+{
+	if (l == NULL)
+		return  NULL;
+	void * p = NULL;
+	p = l->next;
+	free(l);
+	return p;
+}*/
 void suppListeArcs( ListeArcs l)
 {
 	if (estVide(l))

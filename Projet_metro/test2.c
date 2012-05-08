@@ -7,7 +7,8 @@
 
 int main()
 {
-	int nbStation;
+	int nbStation, numDep, numArr;
+	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM];
 	char nom[] =  "graphes/metro2012.csv";
 	//char nom[] = "graphes/graphe1_2012.csv";
 	Station * plan = NULL;
@@ -17,11 +18,18 @@ int main()
 	afficher(plan, nbStation);
 
 	ListeRes resultat = NULL;
-	puts("aStar ...");
-	resultat = aStar(121, 236, plan);
+    puts("Choix de la station de départ :");
+	gets(nomDep);
+    numDep = nomToNum(nomDep, plan, nbStation);
+    puts("Choix de la station d'arrivée :");
+    gets(nomArr);
+	gets(nomArr);
+    numArr = nomToNum(nomArr, plan, nbStation);
+    puts("aStar ...");
+	//resultat = aStar(121, 236, plan);
 	//resultat = aStar(2, 5, plan);
-	afficherRes(resultat,plan);
+	resultat = aStar(numDep, numArr, plan);
+	afficherRes(resultat);
 	puts("fini ...");
-
 	return 0;
 }

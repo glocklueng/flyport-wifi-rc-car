@@ -37,7 +37,7 @@ Station * lecture( char* nomFichier , int* nbStation)
 Station lireStation( FILE * fichier )
 {
 	Station station;
-	fscanf(fichier, "%d %lf %lf %s", &(station.num), &(station.lat), &(station.lon), (station.line));
+	fscanf(fichier, "%d	%lf	%lf\t%s\t", &(station.num), &(station.lat), &(station.lon), (station.line));
 	fgets(station.nom, TAILLE_NOM, fichier);
 	if (station.nom[strlen(station.nom)-1]<32)
 		station.nom[strlen(station.nom)-1]=0;
@@ -70,12 +70,12 @@ void sePlacer( FILE * fichier, POSITION pos , int nbStation, int nbArcs)
 			for(i=0; i<3+nbStation; i++)
 				fgets(chaine, TAILLE_LINE, fichier);
 			break;
-		case FIN: 
+		case FIN:
 			rewind(fichier);
 			for(i=0; i<3+nbStation+nbArcs; i++)
 				fgets(chaine, TAILLE_LINE, fichier);
 			break;
-					
+
 	}
 
 
