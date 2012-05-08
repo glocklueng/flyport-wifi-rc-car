@@ -6,7 +6,7 @@
 
 #define TAILLE_NOM 512
 #define TAILLE_LIGNE 16
-#define TAILLE_LINE 1000 
+#define TAILLE_LINE 1000
 
 
 struct Arc
@@ -32,9 +32,10 @@ typedef struct Station Station;
 
 ListeArcs ajoutTete( ListeArcs l, Arc arc);
 ListeArcs suppTete( ListeArcs l );
+//void * suppTete( void * l );
 void suppListeArcs( ListeArcs l);
 int estVide(ListeArcs l);
-void afficherListeArcs( ListeArcs graphe ); 
+void afficherListeArcs( ListeArcs graphe );
 void afficherStation( Station station );
 void afficher( Station * plan , int nbStation);
 

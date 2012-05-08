@@ -17,26 +17,23 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 	while (open != NULL)
 	{
 		k  = getLowestC(open);
-		//puts("1");///DEBUG
-        //printf("k = %i\n", k.num);
+
 		if (k.num == numArr)//si on est arrivé
 		{
-		    //puts("trouve ...");///DEBUG
-			res = reconstruire(souvenir, numDep, numArr);//reconstruction du chemin grace a la liste souv
+
+			res = reconstruire(souvenir, numDep, numArr,plan);//reconstruction du chemin grace a la liste souv
 			suppData(open);
 			suppData(close);
 			suppSouv(souvenir);
 			return res;
 		}
 		open = removeData(open,k.num);//inutile ou pas, suivant ce que fait getLowestC()
-		//puts("2"); ///DEBUG
+
 		/*On ajoute ce point dans la liste fermée*/
 		close = setData(close, k.num, k.a, k.h); //la copie de a,h et c est inutile : à améliorer par la suite
 
-		//s = plan[k.num].arcs; // = la liste de ses fils
-		//afficherListeArcs(s); ///DEBUG
 		/* Pour tout les fils s de k*/
-		for (s = s = plan[k.num].arcs ; s != NULL ; s = s->next)
+		for (s = plan[k.num].arcs ; s != NULL ; s = s->next)
 		{
 			if (isInListe(close,s->num))
 				continue; //on passe au fis suivant
@@ -62,8 +59,6 @@ ListeRes aStar(int numDep, int numArr, Station * plan)
 				souvenir = ajouterSouv(souvenir, s->num, k.num);
 				open = setData(open, s->num, tentativeCscore, heuristic(s->num, numArr, plan));
 			}
-
-			//s = s->next;
 		}
 	}
 	return NULL;
@@ -105,35 +100,13 @@ ListeData removeData(ListeData list ,int num) // Par recurrence : inutile, à ch
     }
 }
 
-/*ListeData removeData(ListeData list ,int num)
-{
-	ListeData p = list;
-	ListeData tmp = NULL;
-	if (p != NULL)
-		return NULL;
-	ListeData q = list->next;
-	while (q != NULL)
-	{
-		if ( q->num == num )
-		{
-			p->next = q->next;
-			free(q);
-
-		}
-
-		p = p->next;
-		q = q->next;
-	}
-return list;
-
-
-}*/
-
-ListeRes reconstruire(ListeSouv souv, int numDep, int numArr)
+ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station * plan)
 {
     ListeRes p = NULL;
     int x;
     p = ajouterRes(p,numArr);
+    if ( numDep == numArr)
+        return p;
     x = getSouv(souv,numArr);
     p = ajouterRes(p,x);
     while ( x != numDep)
@@ -141,8 +114,51 @@ ListeRes reconstruire(ListeSouv souv, int numDep, int numArr)
         x = getSouv(souv,x);
         p = ajouterRes(p,x);
     }
+    //afficherRes(p);///DEBUG
+    p = completerEtSimplifier(p, plan);
     return p;
 }
+
+
+ListeRes completerEtSimplifier(ListeRes resultat, Station * plan)
+{
+	ListeRes p = resultat;
+	Station  station;
+    ListeArcs liaisons = NULL;
+
+    /*printf("%s  /  %s\n",p->nom,(p->next)->nom);
+    printf("%s  /  %s\n",resultat->nom,(resultat->next)->nom);
+    while(strcasecmp(p->nom,(p->next)->nom) == 0)
+    {
+       p = suppTeteRes(p);
+       //p=p->next;
+    }*/
+
+	while ( p != NULL)
+	{
+		station = plan[p->num];
+        if (p->next != NULL)
+        {
+            liaisons = plan[p->num].arcs;
+            /*On se place au bon endroit sur la liste des arcs*/
+            while (liaisons != NULL)
+            {
+                if ( liaisons->num == p->next->num)
+                    break;
+                liaisons = liaisons ->next;
+            }
+            setRes(p, p->num, station.lat, station.lon, station.nom, station.line, liaisons->cout, 0);
+            //printf("---->%lf\n", liaisons->cout);
+        }
+        else
+        {
+            setRes(p, p->num, station.lat, station.lon, station.nom, station.line, 0, 0);
+        }
+		p = p->next;
+	}
+	return resultat;
+}
+
 
 double absDouble( double a)
 {
@@ -172,6 +188,36 @@ ListeRes ajouterRes( ListeRes l, int num)
 	p->next = l;
 
 	return p;
+}
+
+ListeRes suppTeteRes( ListeRes l )
+{
+	if (l == NULL)
+		return  NULL;
+	ListeRes p = NULL;
+	p = l->next;
+	free(l);
+	return p;
+}
+
+ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant, int correspondance)
+{
+	ListeRes p = l;
+	while ( p != NULL )
+	{
+		if ( p->num == num)
+		{
+			p->lat = lat;
+			p->lon = lon;
+			strcpy(p->nom, nom);
+			strcpy(p->line, line);
+			p->coutIciToSuivant = coutIciToSuivant;
+			p->correspondance = correspondance;
+			return l;
+		}
+		p = p->next;
+	}
+    return l;
 }
 
 void suppRes(ListeRes list)
@@ -289,34 +335,107 @@ int getSouv(ListeSouv l, int num)
 
 }
 
-void afficherRes(ListeRes resultat, Station * plan)
+void afficherRes(ListeRes resultat)
 {
 	ListeRes p = resultat;
-	Station  station;
-    ListeArcs liaisons = NULL;
 	while ( p != NULL)
 	{
-		station = plan[p->num];
 		/*Affichage des données de la station*/
-		printf("%i  %lf   %lf   %s   %s\n",station.num, station.lat, station.lon, station.nom, station.line);
-		/*Afiichage du cout entre deux stations*/
-        if (p->next != NULL)
-        {
-            liaisons = plan[p->num].arcs;
-            /*On se place au bon endroit sur la liste des arcs*/
-            while (liaisons != NULL)
-            {
-                if ( liaisons->num == p->next->num)
-                    break;
-                liaisons = liaisons ->next;
-            }
-            /*Et on affiche le cout*/
-            printf("---->%lf\n", liaisons->cout);
-        }
+		printf("%i  %lf   %lf   %s   %s\n",p->num, p->lat, p->lon, p->nom, p->line);
+        printf("---->%lf    %i\n", p->coutIciToSuivant, p->correspondance);
+
 		p = p->next;
 	}
 }
 
+/*Retourne le premier numéro de station correspondant à nom[], les differents numeros pour un meme nom de station
+sont géré apres*/
+int nomToNum( char * nom, Station * plan , int nbStation)
+{
+    /*int i;
+    for ( i = 0 ; i <  nbStation ; i++)
+    {
+        if (!strcasecmp(nom,plan[i].nom))
+            return plan[i].num;
+    }
+    return -1;//existe pas*/
+    int i,choix;
+    int* proba = calloc(nbStation,sizeof(*proba));
+    SearchName best[TAILLE_LISTE_PROPOSITION];
+    /*INITIALISTAION DU TABLEAU DE RESSEMBLANCE*/
+    for ( i = 0 ; i <  nbStation ; i++)
+    {
+        proba[i] = abs(strncasecmp(nom,plan[i].nom,strlen(nom)));
+    }
+    /*INIATIALISATION DU TABLEAU DES 5 MEILLIEURES RESSEMBLANCES*/
+    for ( i = 0 ; i <  TAILLE_LISTE_PROPOSITION ; i++)
+    {
+        best[i].prob = proba[i];
+        best[i].num = i;
+        strcpy(best[i].nom,plan[i].nom);
+    }
+    triABulles(best,TAILLE_LISTE_PROPOSITION);
+    /*RECHECHE DES 5 MEILLIEURES RESSEMBLANCES*/
+    for ( i = 5 ; i <  nbStation ; i++)
+    {
+        if (proba[i] < best[TAILLE_LISTE_PROPOSITION-1].prob && sontDifferents(best,plan[i].nom))
+        {
+            best[TAILLE_LISTE_PROPOSITION-1].prob = proba[i];
+            best[TAILLE_LISTE_PROPOSITION-1].num = i;
+            strcpy(best[TAILLE_LISTE_PROPOSITION-1].nom,plan[i].nom);
+            triABulles(best,TAILLE_LISTE_PROPOSITION);
+        }
+    }
+    /*AFFICHAGE DES 5 MEILLIEURES AVEC CHOIX*/
+    for ( i = 0 ; i < TAILLE_LISTE_PROPOSITION ; i++)
+    {
+        printf("%i:  %s  %i  %i\n",i,best[i].nom, best[i].num,best[i].prob);///DEBUG
+        //printf("%i:  %s\n",i,best[i].nom);
+
+    }
+    /*DEMANDE DU CHOIX*/
+    scanf("%i",&choix);
+    /*RETOUR DU NUMERO CORRESPONDANT*/
+    return best[choix].num;
+}
+
+void triABulles(SearchName * tab, int taille)
+{
+    int fini = 0;
+    int i;
+    while(!fini)
+    {
+        fini = 1;
+        for(i=0 ; i < taille-1 ; i++)
+        {
+            if(tab[i].prob > tab[i+1].prob)
+            {
+                swap(&tab[i],&tab[i+1]);
+                fini = 0;
+            }
+        }
+        taille--;
+    }
+}
+
+void swap(SearchName * a, SearchName * b)
+{
+    SearchName tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+/*retourne 1 si differents*/
+int sontDifferents(SearchName * best, char * nom)
+{
+    int i;
+    for (i = 0 ; i < TAILLE_LISTE_PROPOSITION ; i++)
+    {
+        if (strcasecmp(best[i].nom,nom) == 0)
+            return 0;
+    }
+    return 1;
+}
 
 
 
