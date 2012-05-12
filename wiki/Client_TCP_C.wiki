@@ -21,7 +21,7 @@ Les requêtes sont envoyées une à une via un buffer TCP de taille fixée.
 
 = Code =
 
-Ce code est extrait de l'article de [http://broux.developpez.com/articles/c/sockets/ Benjamin Roux] (03/2009) qui constitue une bonne introduction aux connexion TCP en C sur les systèmes de type Unix et Windows.
+Ce code est extrait de l'article de [http://broux.developpez.com/articles/c/sockets/ Benjamin Roux] (03/2009) qui constitue une bonne introduction aux connexions TCP en C sur les systèmes de type Unix et Windows.
 
 <code language="c">
 /* Inclusions standard */
