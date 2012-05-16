@@ -75,7 +75,7 @@ Data getLowestC(ListeData open)
         {
 			cMin = p->c;
 			dataMin = *p;
-		}
+	}
         p = p->next;
     }
     return dataMin;
@@ -106,7 +106,10 @@ ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station * plan)
     int x;
     p = ajouterRes(p,numArr);
     if ( numDep == numArr)
+    {
+	p = completer(p, plan);
         return p;
+    }
     x = getSouv(souv,numArr);
     p = ajouterRes(p,x);
     while ( x != numDep)
@@ -114,49 +117,70 @@ ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station * plan)
         x = getSouv(souv,x);
         p = ajouterRes(p,x);
     }
-    //afficherRes(p);///DEBUG
-    p = completerEtSimplifier(p, plan);
+    p = completer(p, plan);
+    p = simplifier(p);
     return p;
 }
 
 
-ListeRes completerEtSimplifier(ListeRes resultat, Station * plan)
+ListeRes completer(ListeRes resultat, Station * plan)
 {
 	ListeRes p = resultat;
 	Station  station;
-    ListeArcs liaisons = NULL;
+    	ListeArcs liaisons = NULL;
 
-    /*printf("%s  /  %s\n",p->nom,(p->next)->nom);
-    printf("%s  /  %s\n",resultat->nom,(resultat->next)->nom);
-    while(strcasecmp(p->nom,(p->next)->nom) == 0)
-    {
-       p = suppTeteRes(p);
-       //p=p->next;
-    }*/
+    
 
 	while ( p != NULL)
 	{
 		station = plan[p->num];
-        if (p->next != NULL)
-        {
-            liaisons = plan[p->num].arcs;
-            /*On se place au bon endroit sur la liste des arcs*/
-            while (liaisons != NULL)
-            {
-                if ( liaisons->num == p->next->num)
-                    break;
-                liaisons = liaisons ->next;
-            }
-            setRes(p, p->num, station.lat, station.lon, station.nom, station.line, liaisons->cout, 0);
-            //printf("---->%lf\n", liaisons->cout);
-        }
-        else
-        {
-            setRes(p, p->num, station.lat, station.lon, station.nom, station.line, 0, 0);
-        }
-		p = p->next;
+        	if (p->next != NULL)
+        	{
+            		liaisons = plan[p->num].arcs;
+           		/*On se place au bon endroit sur la liste des arcs*/
+           		while (liaisons != NULL)
+            		{
+                		if ( liaisons->num == p->next->num)
+                    			break;
+                			liaisons = liaisons ->next;
+            		}
+            		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, liaisons->cout, 0);
+			p = p->next;
+        	}
+       		else
+        	{
+        		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, 0, 0);
+			break;
+        	}
+		
 	}
 	return resultat;
+
+}
+
+ListeRes simplifier( ListeRes resultat )
+{
+	if ( resultat == NULL || resultat->next == NULL)
+		return resultat;
+	ListeRes p =resultat;
+	/* SUPPRESSION CORRESPONDANCE INUTILE AU DEPART */
+	while(strcasecmp(resultat->nom,(resultat->next)->nom) == 0)
+    	{
+      		resultat = suppTeteRes(resultat);
+    	}
+	/* SUPPRESSION CORRESPONDANCE INUTILE AU ARRIVE */
+	if (resultat->next == NULL || resultat->next->next ==  NULL)
+		return resultat;
+	while ( p->next->next != NULL )
+	{
+		p = p->next;
+	}
+	if (strcasecmp(p->nom,(p->next)->nom) == 0)
+	{
+		resultat = suppQueueRes(resultat);
+	}
+	return resultat;
+
 }
 
 
@@ -198,6 +222,25 @@ ListeRes suppTeteRes( ListeRes l )
 	p = l->next;
 	free(l);
 	return p;
+}
+
+ListeRes suppQueueRes( ListeRes l )
+{
+	if ( l == NULL || l->next == NULL )
+	{
+		free(l);
+		return NULL;
+	}
+	ListeRes s = l;
+	ListeRes p = l->next;
+	while ( p->next != NULL )
+	{
+		s = s->next;
+		p = p->next;
+	}
+	free(p);
+	s->next = NULL;
+	return l;
 }
 
 ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant, int correspondance)
@@ -342,7 +385,7 @@ void afficherRes(ListeRes resultat)
 	{
 		/*Affichage des données de la station*/
 		printf("%i  %lf   %lf   %s   %s\n",p->num, p->lat, p->lon, p->nom, p->line);
-        printf("---->%lf    %i\n", p->coutIciToSuivant, p->correspondance);
+        	printf("---->%lf    %i\n", p->coutIciToSuivant, p->correspondance);
 
 		p = p->next;
 	}
@@ -362,12 +405,12 @@ int nomToNum( char * nom, Station * plan , int nbStation)
     int i,choix;
     int* proba = calloc(nbStation,sizeof(*proba));
     SearchName best[TAILLE_LISTE_PROPOSITION];
-    /*INITIALISTAION DU TABLEAU DE RESSEMBLANCE*/
+    /* INITIALISTAION DU TABLEAU DE RESSEMBLANCE */
     for ( i = 0 ; i <  nbStation ; i++)
     {
         proba[i] = abs(strncasecmp(nom,plan[i].nom,strlen(nom)));
     }
-    /*INIATIALISATION DU TABLEAU DES 5 MEILLIEURES RESSEMBLANCES*/
+    /* INIATIALISATION DU TABLEAU DES 5 MEILLIEURES RESSEMBLANCES */
     for ( i = 0 ; i <  TAILLE_LISTE_PROPOSITION ; i++)
     {
         best[i].prob = proba[i];
@@ -375,7 +418,7 @@ int nomToNum( char * nom, Station * plan , int nbStation)
         strcpy(best[i].nom,plan[i].nom);
     }
     triABulles(best,TAILLE_LISTE_PROPOSITION);
-    /*RECHECHE DES 5 MEILLIEURES RESSEMBLANCES*/
+    /*RECHECHE DES 5 MEILLIEURES RESSEMBLANCES */
     for ( i = 5 ; i <  nbStation ; i++)
     {
         if (proba[i] < best[TAILLE_LISTE_PROPOSITION-1].prob && sontDifferents(best,plan[i].nom))
@@ -386,16 +429,16 @@ int nomToNum( char * nom, Station * plan , int nbStation)
             triABulles(best,TAILLE_LISTE_PROPOSITION);
         }
     }
-    /*AFFICHAGE DES 5 MEILLIEURES AVEC CHOIX*/
+    /* AFFICHAGE DES 5 MEILLIEURES AVEC CHOIX */
     for ( i = 0 ; i < TAILLE_LISTE_PROPOSITION ; i++)
     {
         printf("%i:  %s  %i  %i\n",i,best[i].nom, best[i].num,best[i].prob);///DEBUG
         //printf("%i:  %s\n",i,best[i].nom);
 
     }
-    /*DEMANDE DU CHOIX*/
+    /* DEMANDE DU CHOIX */
     scanf("%i",&choix);
-    /*RETOUR DU NUMERO CORRESPONDANT*/
+    /* RETOUR DU NUMERO CORRESPONDANT */
     return best[choix].num;
 }
 
