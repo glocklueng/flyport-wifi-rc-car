@@ -1,0 +1,6 @@
+
+
+ListeChangement traitementAffichage(ListeRes resultat)
+{
+
+}

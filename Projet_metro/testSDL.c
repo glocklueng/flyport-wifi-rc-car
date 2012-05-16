@@ -10,12 +10,9 @@ int main()
 	int nbStation, numDep, numArr;
 	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM];
 	char nom[] =  "graphes/metro2012.csv";
-	//char nom[] = "graphes/graphe1_2012.csv";
 	Station * plan = NULL;
 	puts("lecture ...");
 	plan = lecture(nom, &nbStation);
-	puts("affichage :");
-	afficher(plan, nbStation);
 
 	ListeRes resultat = NULL;
 	ListeRes resultat2 = NULL;
@@ -27,11 +24,11 @@ int main()
 	gets(nomArr);
     	numArr = nomToNum(nomArr, plan, nbStation);
     	puts("aStar ...");
-	//resultat = aStar(121, 236, plan);
-	//resultat = aStar(61, 17,plan);
 	resultat = aStar(numDep, numArr, plan);
-	//resultat2 = resultat->next;
 	afficherRes(resultat);
 	puts("fini ...");
+
+	
+
 	return 0;
 }
