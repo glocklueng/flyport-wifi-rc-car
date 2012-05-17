@@ -1,6 +1,8 @@
 #include "taskFlyport.h"
 
 #define PWM_FREQUENCY 333
+#define PIN_SERVO p6
+
 void lireDonnee(char* read);
 
 char angleServomoteur = 49;
@@ -22,17 +24,17 @@ void FlyportTask()
 	UARTWrite(1,chaine);
 	
 	/*initialisation pins */
-    IOInit(p6,out);//direction
+    IOInit(PIN_SERVO,out);//direction
     PWMInit(1,PWM_FREQUENCY,49);
     //PWMOn(d3out,1);
     
 	IOInit(p4,out);//vitesse
-	IOInit(p21,out);
+	IOInit(p17,out);
     PWMInit(2,PWM_FREQUENCY,0);
-	IOPut(p21,off);
+	IOPut(p17,off);
     PWMOn(p4,2);
 	
-	PWMOn(p6,1);
+	PWMOn(PIN_SERVO,1);
 	PWMDuty(49,1);
 	vTaskDelay(20);
 	PWMOff(1);
@@ -63,11 +65,11 @@ void FlyportTask()
 			if (clconn == TRUE)
 			{
 				clconn = FALSE;
-				IOPut(p21,off);
+				IOPut(p17,off);
 				PWMDuty(0,2);
 				PWMOff(1);
 				PWMOff(2);
-				Reset();
+				//Reset();
 			}
 		}
 		
@@ -102,7 +104,7 @@ void lireDonnee(char* read)
 	if ( car == 'D' || car == 'd' )//commande de direction// droite
 	{
 		/*//PWMDuty(convert(val),1);
-		PWMOn(p6,1);
+		PWMOn(PIN_SERVO,1);
 		PWMDuty(61,1);
 		//DelayMs(100*/
 		
@@ -110,23 +112,23 @@ void lireDonnee(char* read)
 	}
 	else if ( car == 'G' || car == 'g' )//gauche
 	{
-		/*PWMOn(p6,1);
+		/*PWMOn(PIN_SERVO,1);
 		PWMDuty(37,1);*/
 		angleServomoteur = 37;
 	}
 	else if ( car == '/' )//avant droit
 	{
-		PWMOn(p6,1);
+		PWMOn(PIN_SERVO,1);
 		PWMDuty(55,1);
 	}
 	else if ( car == '\\' )//avant gauche
 	{
-		PWMOn(p6,1);
+		PWMOn(PIN_SERVO,1);
 		PWMDuty(43,1);
 	}
 	else if ( car == '|' )//tout droit
 	{
-		/*PWMOn(p6,1);
+		/*PWMOn(PIN_SERVO,1);
 		PWMDuty(49,1);
 		vTaskDelay(9);
 		PWMOff(1);*/
@@ -135,7 +137,7 @@ void lireDonnee(char* read)
 	else if (car == 'V' || car == 'v' || car == 'A' || car == 'a')
 	{
 		
-		IOPut(p21,on);
+		IOPut(p17,on);
 		PWMDuty(100-val,2);//commande de vitesse
 		PWMOn(p4,2);
 		
@@ -143,13 +145,13 @@ void lireDonnee(char* read)
 	else if (car == 'R' || car == 'r')
 	{
 		
-		IOPut(p21,off);
+		IOPut(p17,off);
 		PWMDuty(val,2);//commande de vitesse
 		PWMOn(p4,2);
 	}
 	else if (car == 's' || car == 'S')
 	{
-		IOPut(p21,off);
+		IOPut(p17,off);
 		PWMDuty(0,2);//commande de vitesse
 	}
 	else 
@@ -157,7 +159,7 @@ void lireDonnee(char* read)
 		UARTWrite(1, "commande non valide\n");
 	}
 	PWMDuty(angleServomoteur,1);
-	PWMOn(p6,1);
+	PWMOn(PIN_SERVO,1);
 	//vTaskDelay(20);
 	//PWMOff(1);
 }
