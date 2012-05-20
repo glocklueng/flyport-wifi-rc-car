@@ -1,0 +1,219 @@
+\documentclass[a4paper,12pt]{report}
+
+
+\usepackage[utf8]{inputenc}		% Accents, etc
+\usepackage[frenchb]{babel} 		% Francais
+\usepackage[T1]{fontenc}			% Encodage de police (cÃ©sure, accents)
+\usepackage{lmodern,textcomp}	% Polices 'Latin Modern' plutÃ´t que 'Computer Modern super'
+
+\usepackage[pdftex]{graphicx}			% Graphiques (images, ...)
+\usepackage{amsmath,amssymb}		% Equations
+\usepackage[pdftex]{hyperref}	% Lien table des matières
+
+\usepackage{titlesec}			% Chapitres
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+
+% Symbole euro €
+\usepackage{eurosym}
+
+% Floating figures
+\usepackage{wrapfig}
+
+% Subfigures
+\usepackage{subfig}
+
+% Marges du document
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=25mm, right=25mm}
+
+%
+\usepackage{rotating}
+
+% Taille des sous-titres
+%\usepackage{titlesec}
+%\titleformat{\subsection}{\small\bfseries}{\thesection}{1em}{}
+
+% Page de titre du document
+\title{Projets de groupe \\ Rapport Final}
+%\author{J. \bsc{Fanguede}, F. \bsc{Castellane}, G. \bsc{Mahieux}, F. \bsc{Tavares}}
+\author{\bsc{J. Fanguede} \and \bsc{F. Castellane} \and \bsc{G. Mahieux} \and \bsc{F. Tavares}  }
+\date{Février 2012}
+
+% Réglages des métadata du PDF
+\hypersetup{
+pdftitle={Rapport Final},
+pdfauthor={J. Fanguede, F. Castellane, G. Mahieux, F. Tavares},
+pdfsubject={Projets de groupe 2012},
+pdfkeywords={Phelma, Projet, Grenoble, INP, Flyport, OpenPicus}
+}
+% Ligne horizontale
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+% Début du document
+\begin{document}
+
+\begin{titlepage}
+	\begin{center}
+	
+	% Upper part of the page
+	\includegraphics[width=0.25\textwidth]{images/smallphelma.png}\\[1.0cm]    
+
+	\textsc{\Large Grenoble INP -- Phelma}\\[0.5cm]
+
+	\textsc{\huge Projet de groupe}\\[3.5cm]
+
+	\textsc{\huge Voiture Radiocommandée en Wi-Fi}\\[0.6cm]
+	
+	% Title
+	\HRule \\[0.4cm]
+	{ \huge \bfseries Rapport Final}\\[0.1cm]
+
+	\HRule \\[3.5cm]
+	
+
+	% Author and supervisor
+	\begin{minipage}{0.3\textwidth}
+		\begin{flushleft} \large
+			\emph{Groupe:}\\
+			J. \textsc{Fanguede}, \\ F. \textsc{Castellane}, \\ G. \textsc{Mahieux}, \\ F. \textsc{Tavares}
+		\end{flushleft}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright} \large
+			\emph{Tuteur:} \\
+			M. Sylvain \textsc{Huet}
+		\end{flushright}
+	\end{minipage}
+	\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+
+\end{titlepage}
+
+% Page de titre du document
+%\maketitle
+
+% Remerciements
+\chapter*{Remerciements}
+Tout d’abord, nous souhaitons remercier notre tuteur de projet, M. Huet, pour l’aide et le regard critique qu’il nous a apporté dans le choix de certaines solutions techniques du projet, ainsi que tout l’équipe encadrante des projets à Phelma pour leur accompagnement et leur aide quand à l’utilisation et le prêt de matériel de l’école.
+
+Nous voulons également remercier les l’entreprise OpenPICUS pour avoir soutenu notre démarche en offrant un module OpenPICUS Flyport® à Phelma pour mener à bien notre projet, ainsi que ST Microelectronics pour nous avoir envoyé deux contrôleurs de moteurs L298 .
+
+% Introduction
+\chapter*{Introduction}
+Texte d'introduction…
+
+% Table des matières
+\tableofcontents
+
+% Début du document
+\chapter{Rapport technique}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+	\section{Cahier des charges}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+	\section{Solutions techniques à mettre en oeuvre}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+		\subsection{Voiture}
+		
+			\subsubsection{Cadre}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Servo-Moteur}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Moteur à courant continu}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Pont en H}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Gestion du Wi-Fi}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Micro-contrôleur}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+		\subsection{Commande}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+	\section{Solutions techniques à mettre en oeuvre}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+		\subsection{Choix techniques retenus}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+			\subsubsection{Châssis Nikko}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Pont en H}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{OpenPICUS Flyport}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Limitation de courant}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Alimentation}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			
+		\subsection{Réalisation des  PCB}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+			\subsubsection{Tests sur plaque à trou}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Logiciel CAO Altium}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			
+			\subsubsection{Design global de la carte}
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+		
+		\subsection{Logiciel de commande	}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+	\section{Tests finaux}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+		\subsection{Portée de la voiture}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+		\subsection{Autonomie}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		
+		\subsection{Paramètres}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+
+\chapter{Gestion de projet}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+	\section{Aspects organisationnels}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+	\section{Diagramme de Gant}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+	\section{Gestion financière}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+	\section{Retours personnels de projet}
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	
+
+\chapter{Conclusion}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\end{document}
