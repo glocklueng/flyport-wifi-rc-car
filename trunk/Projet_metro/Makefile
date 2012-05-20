@@ -8,7 +8,7 @@ test2:  test2.o donnees.o fichier.o astar.o
 test1:  test1.o donnees.o fichier.o
 	gcc -o $@ $^
 
-testSDL:  test2.o donnees.o fichier.o astar.o testSDL.o
+testSDL:  testSDL.o donnees.o fichier.o astar.o affich.o
 	gcc -o $@ $^ $(LDFLAGS)
 
 clean:
