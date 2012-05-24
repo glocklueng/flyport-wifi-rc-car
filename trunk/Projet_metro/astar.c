@@ -144,12 +144,12 @@ ListeRes completer(ListeRes resultat, Station * plan)
                     			break;
                 			liaisons = liaisons ->next;
             		}
-            		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, liaisons->cout, 0);
+            		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, liaisons->cout);
 			p = p->next;
         	}
        		else
         	{
-        		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, 0, 0);
+        		setRes(p, p->num, station.lat, station.lon, station.nom, station.line, 0);
 			break;
         	}
 		
@@ -243,7 +243,7 @@ ListeRes suppQueueRes( ListeRes l )
 	return l;
 }
 
-ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant, int correspondance)
+ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant)
 {
 	ListeRes p = l;
 	while ( p != NULL )
@@ -255,7 +255,6 @@ ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NO
 			strcpy(p->nom, nom);
 			strcpy(p->line, line);
 			p->coutIciToSuivant = coutIciToSuivant;
-			p->correspondance = correspondance;
 			return l;
 		}
 		p = p->next;
@@ -385,7 +384,7 @@ void afficherRes(ListeRes resultat)
 	{
 		/*Affichage des données de la station*/
 		printf("%i  %lf   %lf   %s   %s\n",p->num, p->lat, p->lon, p->nom, p->line);
-        	printf("---->%lf    %i\n", p->coutIciToSuivant, p->correspondance);
+        	printf("---->%lf\n", p->coutIciToSuivant);
 
 		p = p->next;
 	}
