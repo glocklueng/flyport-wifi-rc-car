@@ -90,14 +90,23 @@ void afficherChangement(ListeChangement l)
 
 void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l)
 {
-	SDL_Rect position;
+	SDL_Rect position, posTexte1, posTexte2;
+	SDL_Surface* tPrendre = NULL, *texte = NULL;
 	puts("entree SDL");
+	TTF_Font *police = NULL;
+	SDL_Color couleurNoire = {0, 0, 0};
+	police = TTF_OpenFont("annexes/DejaVuSans.ttf", 18);
+	//tPrendre = TTF_RenderText_Blended(police, "Prendre", couleurNoire);
 	int i=0;
 	while ( l!= NULL)
 	{
 		i++;
-		position.x=30;
+		position.x=1;
 		position.y=30*i;
+		posTexte1.x=20;
+		posTexte1.y=30*i;
+		posTexte2.x=30;
+		posTexte2.y=30*i; 
 		char tmp[TAILLE_NOM] ="";
 		int num = renvoi(nomImages,l->ligne);
 		printf("%i\n", num);
@@ -109,9 +118,21 @@ void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l)
 		image = IMG_Load(tmp);
 		strcpy(tmp,"");
 		printf("%s\t%lf\t%s\t%s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+		//SDL_BlitSurface(tPrendre, NULL, ecran, &posTexte1);
 		SDL_BlitSurface(image, NULL, ecran, &position);
+		strcat(tmp,"Prendre le ");
+		strcat(tmp,l->ligne);
+		strcat(tmp," de ");
+		strcat(tmp,l->nomDep);
+		strcat(tmp," a ");
+		strcat(tmp,l->nomArr);
+		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
+		SDL_BlitSurface(texte, NULL, ecran, &posTexte2);
+		
 		l = l->next;
 	}
+	TTF_CloseFont(police);
+	TTF_Quit();
 }
 
 int renvoi(char * nomImages[], char * texte)
