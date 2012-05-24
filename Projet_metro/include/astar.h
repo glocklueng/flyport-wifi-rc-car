@@ -39,7 +39,6 @@ struct Res
 	char nom[TAILLE_NOM];
 	char line[TAILLE_LINE];
 	double coutIciToSuivant;
-	int correspondance;
 
 	struct Res * next;
 };
@@ -61,7 +60,7 @@ ListeRes completer(ListeRes resultat, Station * plan);
 ListeRes simplifier( ListeRes resultat );
 double heuristic(int numDep,int numArr,Station * plan);
 ListeRes ajouterRes(ListeRes l, int num);
-ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant, int correspondance);
+ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant);
 ListeRes suppTeteRes( ListeRes l );
 ListeRes suppQueueRes( ListeRes l );
 void suppRes(ListeRes list);
