@@ -95,13 +95,13 @@ extern int WFStatus;
 /*--------------------------------------------*/
 /* Default settings for Connection Management */
 /*--------------------------------------------*/
-#define MY_DEFAULT_SSID_NAME                "FlyportNet"
+#define MY_DEFAULT_SSID_NAME                "INPG-InterU"
 
-#define MY_DEFAULT_NETWORK_TYPE             WF_ADHOC   /* WF_INFRASTRUCTURE or WF_ADHOC     */
+#define MY_DEFAULT_NETWORK_TYPE             WF_INFRASTRUCTURE   /* WF_INFRASTRUCTURE or WF_ADHOC     */
 
 #define MY_DEFAULT_SCAN_TYPE                WF_ACTIVE_SCAN      /* WF_ACTIVE_SCAN or WF_PASSIVE_SCAN */
 
-#define MY_DEFAULT_CHANNEL_LIST             {1,2,3,4,5,6,7,8,9,10,11}            /* use {} to scan all channels       */
+#define MY_DEFAULT_CHANNEL_LIST             {}            /* use {} to scan all channels       */
 
 #define MY_DEFAULT_LIST_RETRY_COUNT         (3u)
 
