@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.6)  20 MAY 2012 15:36
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.2.6)  22 MAY 2012 00:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -670,11 +670,22 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip46
 )
-(/usr/local/texlive/2011/texmf-dist/tex/latex/titlesec/titlesec.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/SIunits/SIunits.sty
+Package: SIunits 2007/12/02 v1.36 Support for the International System of units
+ (MH)
+
+
+\@qskwidth=\skip47
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 46.
+\symgreek=\mathgroup6
+(/usr/local/texlive/2011/texmf-dist/tex/latex/SIunits/SIunits.cfg)
+Option `squaren' provided!
+Option `Gray' provided!
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \ttl@box=\box28
-\beforetitleunit=\skip47
-\aftertitleunit=\skip48
+\beforetitleunit=\skip48
+\aftertitleunit=\skip49
 \ttl@plus=\dimen120
 \ttl@minus=\dimen121
 \ttl@toksa=\toks22
@@ -714,18 +725,18 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
 \c@KVtest=\count116
-\sf@farskip=\skip49
+\sf@farskip=\skip50
 \sf@captopadj=\dimen133
-\sf@capskip=\skip50
-\sf@nearskip=\skip51
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
 \c@subfigure=\count117
 \c@subfigure@save=\count118
 \c@lofdepth=\count119
 \c@subtable=\count120
 \c@subtable@save=\count121
 \c@lotdepth=\count122
-\sf@top=\skip52
-\sf@bottom=\skip53
+\sf@top=\skip53
+\sf@bottom=\skip54
 )
 (/usr/local/texlive/2011/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -749,43 +760,43 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count126
-\rotFPtop=\skip54
-\rotFPbot=\skip55
+\rotFPtop=\skip55
+\rotFPbot=\skip56
 \rot@float@box=\box31
 \rot@mess@toks=\toks25
 )
 (./RapportFinal.aux)
 \openout1 = `RapportFinal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 56.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 54.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 56.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 54.
-LaTeX Info: Redefining \dots on input line 54.
-LaTeX Info: Redefining \up on input line 54.
+LaTeX Info: Redefining \degres on input line 56.
+LaTeX Info: Redefining \dots on input line 56.
+LaTeX Info: Redefining \up on input line 56.
 
 (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -816,7 +827,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 56.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -826,20 +837,26 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count133
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
 
 (./RapportFinal.out) (./RapportFinal.out)
 \@outlinefile=\write3
 \openout3 = `RapportFinal.out'.
 
+
+Option `squaren' provided! 
+ Command \squaren defined by SIunits package!
+
+Option `Gray' provided! 
+ Command \Gray defined by SIunits package!
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
-LaTeX Info: Redefining \subref on input line 54.
+LaTeX Info: Redefining \subref on input line 56.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -874,46 +891,46 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<images/smallphelma.png, id=80, 96.36pt x 61.6704pt>
+<images/smallphelma.png, id=88, 96.36pt x 61.6704pt>
 File: images/smallphelma.png Graphic file (type png)
 
 <use images/smallphelma.png>
-Package pdftex.def Info: images/smallphelma.png used on input line 60.
+Package pdftex.def Info: images/smallphelma.png used on input line 64.
 (pdftex.def)             Requested size: 113.81102pt x 72.8391pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 81.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 81.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 85.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 85.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 81.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 85.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 81.
+(Font)              <12> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 81.
+(Font)              <8> on input line 85.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 81.
-LaTeX Font Info:    Try loading font information for U+msa on input line 81.
+(Font)              <6> on input line 85.
+LaTeX Font Info:    Try loading font information for U+msa on input line 85.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 81.
+LaTeX Font Info:    Try loading font information for U+msb on input line 85.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -921,7 +938,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/smallphelma.png>]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 104.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 108.
 
  (/usr/local/texlive/2011/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -929,7 +946,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.107 \chapter
+l.111 \chapter
               *{Introduction} [1
 
 ] [2
@@ -942,51 +959,195 @@ l.107 \chapter
 
 ]
 Chapitre 1.
-[4
+<images/schemafonctionnel.png, id=138, 484.6908pt x 167.1846pt>
+File: images/schemafonctionnel.png Graphic file (type png)
 
-] [5] [6] [7]
+<use images/schemafonctionnel.png>
+Package pdftex.def Info: images/schemafonctionnel.png used on input line 184.
+(pdftex.def)             Requested size: 363.5172pt x 125.38812pt.
+
+<images/wbs.png, id=140, 410.7345pt x 195.129pt>
+File: images/wbs.png Graphic file (type png)
+ <use images/wbs.png>
+Package pdftex.def Info: images/wbs.png used on input line 194.
+(pdftex.def)             Requested size: 451.80934pt x 214.64255pt.
+ [4
+
+]
+[5 <./images/schemafonctionnel.png>]
+<images/pwm.png, id=173, 485.4135pt x 220.4235pt>
+File: images/pwm.png Graphic file (type png)
+ <use images/pwm.png>
+Package pdftex.def Info: images/pwm.png used on input line 222.
+(pdftex.def)             Requested size: 364.05922pt x 165.3172pt.
+ [6 <./images/wbs.png>] <images/hbridge.png, id=180, 224.037pt x 158.5122pt>
+File: images/hbridge.png Graphic file (type png)
+
+<use images/hbridge.png>
+Package pdftex.def Info: images/hbridge.png used on input line 238.
+(pdftex.def)             Requested size: 224.03644pt x 158.51181pt.
+ [7 <./images/pwm.png> <./images/hbridge.png>] [8]
+<images/renaultclio.jpg, id=194, 234.8775pt x 140.525pt>
+File: images/renaultclio.jpg Graphic file (type jpg)
+
+<use images/renaultclio.jpg>
+Package pdftex.def Info: images/renaultclio.jpg used on input line 274.
+(pdftex.def)             Requested size: 187.90225pt x 112.42014pt.
+ <images/L298.jpg, id=195, 259.97125pt x 200.75pt>
+File: images/L298.jpg Graphic file (type jpg)
+
+<use images/L298.jpg>
+Package pdftex.def Info: images/L298.jpg used on input line 289.
+(pdftex.def)             Requested size: 77.99197pt x 60.22545pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./images/renaultclio.jpg>]
+<images/flyport.png, id=203, 501.875pt x 304.13625pt>
+File: images/flyport.png Graphic file (type png)
+ <use images/flyport.png>
+Package pdftex.def Info: images/flyport.png used on input line 302.
+(pdftex.def)             Requested size: 150.56366pt x 91.24158pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 311.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 313.
+
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<images/openpicus.jpg, id=204, 1305.87875pt x 757.83125pt>
+File: images/openpicus.jpg Graphic file (type jpg)
+
+<use images/openpicus.jpg>
+Package pdftex.def Info: images/openpicus.jpg used on input line 326.
+(pdftex.def)             Requested size: 391.76665pt x 227.35112pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/limitationcourant.png, id=206, 241.3818pt x 189.8292pt>
+File: images/limitationcourant.png Graphic file (type png)
+
+<use images/limitationcourant.png>
+Package pdftex.def Info: images/limitationcourant.png used on input line 338.
+(pdftex.def)             Requested size: 241.38121pt x 189.82872pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <./images/L298.jpg> <./images/flyport.png>] [11 <./images/openpicus.jpg> <.
+/images/limitationcourant.png>] [12]
+<images/voiture.jpg, id=229, 2055.68pt x 1541.76pt>
+File: images/voiture.jpg Graphic file (type jpg)
+ <use images/voiture.jpg>
+Package pdftex.def Info: images/voiture.jpg used on input line 388.
+(pdftex.def)             Requested size: 452.251pt x 339.18825pt.
+
+[13 <./images/voiture.jpg>]
+<images/logicielqt.png, id=236, 794.97pt x 614.295pt>
+File: images/logicielqt.png Graphic file (type png)
+
+<use images/logicielqt.png>
+Package pdftex.def Info: images/logicielqt.png used on input line 403.
+(pdftex.def)             Requested size: 317.98236pt x 245.71364pt.
+
+<images/logicielandroid.png, id=238, 858.20625pt x 792.9625pt>
+File: images/logicielandroid.png Graphic file (type png)
+
+<use images/logicielandroid.png>
+Package pdftex.def Info: images/logicielandroid.png used on input line 415.
+(pdftex.def)             Requested size: 343.27641pt x 317.17938pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./images/logicielqt.png (PNG copy)>] [15 <./images/logicielandroid.png>]
+[16]
 Chapitre 2.
-[8
 
-]
+./RapportFinal.tex:449: Package inputenc Error: Unicode char \u8:ﬁ not set up
+ for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.449 ...e des besoins nous a permis d’identiﬁ
+                                                  er un certain nombre de t�...
+
+? 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 459.
+
+./RapportFinal.tex:469: Package inputenc Error: Unicode char \u8:  not set up 
+for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.469 ...��Électronique & 0,34 \euro & 1 & 0,40 
+                                                  \\ \hline
+? 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17
+
+] [18] [19]
 Chapitre 3.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 219.
-[9
+[20
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 219.
+Chapitre 4.
+<images/gantt.png, id=282, 2003.3244pt x 710.1732pt>
+File: images/gantt.png Graphic file (type png)
+ <use images/gantt.png>
+Package pdftex.def Info: images/gantt.png used on input line 514.
+(pdftex.def)             Requested size: 701.17406pt x 248.56435pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 519.
+
+[21
+
+] [22 <./images/gantt.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 519.
  (./RapportFinal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 219.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 219.
-
-
-Package rerunfilecheck Warning: File `RapportFinal.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `RapportFinal.out':
-(rerunfilecheck)             Before: 6A703E8586B0BCE597492A518BCB7E91;1282
-(rerunfilecheck)             After:  073D131366B87729858FC175B9C31477;1282.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 219.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 519.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 519.
+Package rerunfilecheck Info: File `RapportFinal.out' has not changed.
+(rerunfilecheck)             Checksum: C2BF3E56BCA9BB0201EFF5534D048FC4;1393.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 519.
  ) 
 Here is how much of TeX's memory you used:
- 9463 strings out of 493633
- 138481 string characters out of 3143378
- 231403 words of memory out of 3000000
- 12574 multiletter control sequences out of 15000+200000
- 56799 words of font info for 46 fonts, out of 3000000 for 9000
+ 10147 strings out of 493633
+ 147448 string characters out of 3143378
+ 248093 words of memory out of 3000000
+ 13165 multiletter control sequences out of 15000+200000
+ 92337 words of font info for 73 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,5n,42p,430b,379s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
-/texlive/2011/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2011/
-texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2011/texmf-dist
-/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2011/texmf-dist/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/
-lm/lmri12.pfb>
-Output written on RapportFinal.pdf (10 pages, 125906 bytes).
+ 44i,10n,42p,1353b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2011/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2011/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2011/texmf-dist/
+fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2011/texmf-dist/fonts/enc/
+dvips/lm/lm-ts1.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/euro
+sym/feybr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/eurosym/
+feymr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lmbx10.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2011/texmf-dist/fo
+nts/type1/public/lm/lmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/p
+ublic/lm/lmr12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lm
+r5.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on RapportFinal.pdf (23 pages, 2308213 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 
