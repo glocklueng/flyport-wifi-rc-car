@@ -8,8 +8,8 @@
 #include "include/astar.h"
 #include "include/affich.h"
 
-#define NB_IMAGES 17
-#define CHEMIN "annexes/images/png/"
+
+//#define CHEMIN "annexes/images/png/"
 
 void viderBuffer();
 
@@ -20,8 +20,6 @@ int main(int argc, char *argv[])
 	SDL_Surface* ecran = NULL, *texte = NULL;
 	//SDL_Surface *ecran2;
 	//ecran = SDL_CreateRGBSurface(0,700,700,32,0xff000000,0x00ff0000,0x0000ff00,0x000000ff);
-	ecran =  SDL_SetVideoMode(700, 700, 32, SDL_HWSURFACE);
-	SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
 	SDL_Rect position;
 
 	/*TTF_Font *police = NULL;
@@ -80,7 +78,7 @@ int main(int argc, char *argv[])
 
     	puts("aStar ...");
 	resultat = aStar(numDep, numArr, plan);
-	//afficherRes(resultat);
+	afficherRes(resultat);
 
 	puts("Changement :");
 	final = traitementAffichage(resultat);
@@ -88,9 +86,10 @@ int main(int argc, char *argv[])
 	afficherChangement(final);
 	puts("fini ...");
 
+	
+	ecran =  SDL_SetVideoMode(700, 700, 32, SDL_HWSURFACE);
+	SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
 	afficherSDL(ecran,nomImages, final);
-	
-	
 	//ecran2 =  SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
 	//SDL_BlitSurface(ecran, NULL, ecran2, &position);
 	SDL_WM_SetCaption("Metro", NULL);

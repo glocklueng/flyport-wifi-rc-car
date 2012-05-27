@@ -8,6 +8,9 @@
 #include "astar.h"
 #include "donnees.h"
 
+#define CHEMIN "annexes/images/png/"
+#define NB_IMAGES 17
+
 struct Changement
 {
         char ligne[TAILLE_LIGNE];
@@ -25,7 +28,7 @@ void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l);
 
 ListeChangement traitementAffichage(ListeRes resultat);
 
-ListeChangement ajoutTeteChangement(ListeChangement liste, char l[], double c, char dep[], char arr[]);
+ListeChangement ajoutQueueChangement(ListeChangement liste, char l[], double c, char dep[], char arr[]);
 void supprimerChangement(ListeChangement liste);
 void afficherChangement(ListeChangement l);
 int max(int a, int b);
