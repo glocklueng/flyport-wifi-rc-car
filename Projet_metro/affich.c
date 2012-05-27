@@ -1,5 +1,5 @@
 #include "include/affich.h"
-#define CHEMIN "annexes/images/png/"
+
 
 void pause()
 {
@@ -17,23 +17,32 @@ void pause()
 }
 
 
-ListeChangement ajoutTeteChangement(ListeChangement liste, char l[], double c, char dep[], char arr[])
+ListeChangement ajoutQueueChangement(ListeChangement liste, char l[], double c, char dep[], char arr[])
 {
-    ListeChangement nouveau = calloc(1, sizeof(*nouveau));
-    if (nouveau == NULL)
-    {
-        perror("Problème d'allocation dynamique de mémoire\n");
-        return NULL;
-    }
-    else
-    {
-        strcpy(nouveau->ligne,l);
-        nouveau->cout = c;
-        strcpy(nouveau->nomDep,dep);
-        strcpy(nouveau->nomArr,arr);
-        nouveau->next = liste;
-        return nouveau;
-    }
+     ListeChangement nouveau = calloc(1, sizeof(*nouveau));
+     ListeChangement p = liste;
+     if (nouveau == NULL)
+     {
+         perror("Problème d'allocation dynamique de mémoire\n");
+         return NULL;
+     }
+	strcpy(nouveau->ligne,l);
+     nouveau->cout = c;
+     strcpy(nouveau->nomDep,dep);
+     strcpy(nouveau->nomArr,arr);
+	if ( liste == NULL )
+	{
+		nouveau->next = NULL;
+		return nouveau;
+	}
+	while ( p->next != NULL )
+	{
+		p = p->next;
+	}
+     
+	p->next = nouveau;
+	nouveau->next = NULL;
+     return liste;
 }
 
 void supprimerChangement(ListeChangement liste)
@@ -65,7 +74,7 @@ ListeChangement traitementAffichage(ListeRes avant)
         }
         else // Sinon c'est une correspondance
         {
-            apres = ajoutTeteChangement(apres, ligneAvant ,compteur, stationDep, parcours->nom); // On ajoute le chagement a la liste des chagements
+            apres = ajoutQueueChangement(apres, ligneAvant ,compteur, stationDep, parcours->nom); // On ajoute le chagement a la liste des chagements
             compteur=parcours->coutIciToSuivant; // On reinitailise le cout du changement
             strcpy(stationDep,parcours->nom); // On sauvegarde la station de départ du prochain changement
         }
@@ -75,7 +84,7 @@ ListeChangement traitementAffichage(ListeRes avant)
 	else
         	parcours = parcours->next;
     }	
-    apres = ajoutTeteChangement(apres, ligneAvant ,compteur, stationDep, parcours->nom); //Ajoute le dernier changement
+    apres = ajoutQueueChangement(apres, ligneAvant ,compteur, stationDep, parcours->nom); //Ajoute le dernier changement
     return apres;
 }
 
@@ -96,6 +105,7 @@ void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l)
 	TTF_Font *police = NULL;
 	SDL_Color couleurNoire = {0, 0, 0};
 	police = TTF_OpenFont("annexes/DejaVuSans.ttf", 18);
+	if (police == NULL) puts("ttf manquante");
 	//tPrendre = TTF_RenderText_Blended(police, "Prendre", couleurNoire);
 	int i=0;
 	while ( l!= NULL)
@@ -116,6 +126,7 @@ void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l)
 		strcat(tmp,".png");
 		printf("%s\n",tmp);
 		image = IMG_Load(tmp);
+		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
 		printf("%s\t%lf\t%s\t%s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
 		//SDL_BlitSurface(tPrendre, NULL, ecran, &posTexte1);
@@ -124,11 +135,13 @@ void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l)
 		strcat(tmp,l->ligne);
 		strcat(tmp," de ");
 		strcat(tmp,l->nomDep);
+		//char c = 0xa0;
+		//strcat(tmp,&c);
 		strcat(tmp," a ");
 		strcat(tmp,l->nomArr);
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurface(texte, NULL, ecran, &posTexte2);
-		
+		strcpy(tmp,"");
 		l = l->next;
 	}
 	TTF_CloseFont(police);
@@ -143,6 +156,7 @@ int renvoi(char * nomImages[], char * texte)
 	{
 		printf("%i", i);
 		i++;
+		if ( i > NB_IMAGES-1 ) return NB_IMAGES-1;
 	}
 	return i;
 }
