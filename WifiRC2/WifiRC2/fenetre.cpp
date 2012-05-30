@@ -26,15 +26,22 @@ MainWindows::MainWindows() : QWidget()
             portValue->setAlignment(Qt::AlignHCenter);
 
     QGridLayout *reseauLayout = new QGridLayout;
-        reseauLayout->addWidget(connexion,1,1);
-        reseauLayout->addWidget(deconnexion,1,2);
+        reseauLayout->addWidget(connexion,1,2);
+        reseauLayout->addWidget(deconnexion,1,3);
         reseauLayout->addWidget(etat,2,1);
-        reseauLayout->addWidget(etatValue,2,2);
+        reseauLayout->addWidget(etatValue,2,2,1,2);
         reseauLayout->addWidget(ip,3,1);
-        reseauLayout->addWidget(ipValue,3,2);
+        reseauLayout->addWidget(ipValue,3,2,1,2);
         reseauLayout->addWidget(port,4,1);
-        reseauLayout->addWidget(portValue,4,2);
+        reseauLayout->addWidget(portValue,4,2,1,2);
     reseau->setLayout(reseauLayout);
+
+    eclairage=new QGroupBox("Phares");
+        allumage=new QPushButton("Allumer / Eteindre");
+
+        QVBoxLayout *eclairageLayout = new QVBoxLayout;
+            eclairageLayout->addWidget(allumage);
+        eclairage->setLayout(eclairageLayout);
 
     moteur=new QGroupBox("Puissance moteur");
         avantL=new QLabel("Avant");
@@ -98,6 +105,7 @@ MainWindows::MainWindows() : QWidget()
 
     QVBoxLayout *dockLayout=new QVBoxLayout;
         dockLayout->addWidget(reseau);
+        dockLayout->addWidget(eclairage);
         dockLayout->addWidget(moteur);
         dockLayout->addWidget(direction);
         dockLayout->addWidget(infos);
@@ -147,6 +155,7 @@ MainWindows::MainWindows() : QWidget()
     connect(connexion, SIGNAL(clicked()), this, SLOT(demanderConnexion()));
     connect(deconnexion, SIGNAL(clicked()), this, SLOT(demanderDeconnexion()));
     connect(commandes, SIGNAL(clicked()), this, SLOT(ouvrirCommandes()));
+    connect(allumage, SIGNAL(clicked()), this, SLOT(envoyerPhare()));
 }
 
     /* GESTION DU CLAVIER */
@@ -254,6 +263,11 @@ void MainWindows::envoyerStop()
     socket->write("s\r\n");
 }
 
+void MainWindows::envoyerPhare()
+{
+    socket->write("p\r\n");
+}
+
 void MainWindows::envoyerNeutre()
 {
     QString envoi;
@@ -262,3 +276,4 @@ void MainWindows::envoyerNeutre()
     envoi = "t"+QString::number(valeur)+ "\r\n";
     socket->write(envoi.toStdString().c_str());
 }
+

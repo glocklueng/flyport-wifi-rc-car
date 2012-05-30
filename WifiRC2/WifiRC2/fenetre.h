@@ -39,6 +39,8 @@ class MainWindows : public QWidget
             QLineEdit *ipValue;
             QLabel *port;
             QLineEdit *portValue;
+       QGroupBox *eclairage;            // phares
+              QPushButton* allumage;
         QGroupBox *moteur;
             QLabel *avantL;
                 QSlider *avantS;
@@ -76,6 +78,7 @@ class MainWindows : public QWidget
             void demanderConnexion();
             void demanderDeconnexion();
             void ouvrirCommandes();
+            void envoyerPhare();
 
 
 };
