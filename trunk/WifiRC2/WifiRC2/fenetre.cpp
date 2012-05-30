@@ -19,7 +19,7 @@ MainWindows::MainWindows() : QWidget()
         etatValue=new QLabel("<b>Désactivé</b>");
             etatValue->setAlignment(Qt::AlignHCenter);
         ip = new QLabel("IP");
-        ipValue = new QLineEdit("192.168.1.115");
+        ipValue = new QLineEdit("10.4.128.10");
             ipValue->setAlignment(Qt::AlignHCenter);
         port = new QLabel("Port");
         portValue = new QLineEdit("2050");
@@ -50,6 +50,7 @@ MainWindows::MainWindows() : QWidget()
             avantS->setMinimum(35);
             avantS->setMaximum(100);
             avantS->setValue(100);
+            avantS->setMinimumHeight(50);
         avantV=new QLabel("100");
             avantV->setAlignment(Qt::AlignCenter);
         arriereL=new QLabel("Arrière");
@@ -58,6 +59,7 @@ MainWindows::MainWindows() : QWidget()
             arriereS->setMinimum(35);
             arriereS->setMaximum(100);
             arriereS->setValue(100);
+            arriereS->setMinimumHeight(50);
         arriereV=new QLabel("100");
             arriereV->setAlignment(Qt::AlignCenter);
         QGridLayout* moteurLayout=new QGridLayout;
@@ -165,16 +167,16 @@ void MainWindows::keyPressEvent ( QKeyEvent * event )
     {
         switch(event->key())
         {
-            case Qt::Key_K :
+            case Qt::Key_Left :
                 gauche->click();
                 break;
-            case Qt::Key_O :
+            case Qt::Key_Up :
                 avant->click();
                 break;
-            case Qt::Key_M :
+            case Qt::Key_Right :
                 droite->click();
                 break;
-            case Qt::Key_L :
+            case Qt::Key_Down :
                 arriere->click();
                 break;
             default:
@@ -189,16 +191,16 @@ void MainWindows::keyReleaseEvent( QKeyEvent * event )
     {
         switch(event->key())
         {
-            case Qt::Key_K :
+            case Qt::Key_Left :
                 envoyerNeutre();
                 break;
-            case Qt::Key_O :
+            case Qt::Key_Up :
                 stop->click();
                 break;
-            case Qt::Key_M :
+            case Qt::Key_Right :
                 envoyerNeutre();
                 break;
-            case Qt::Key_L :
+            case Qt::Key_Down :
                 stop->click();
                 break;
             default:
@@ -221,6 +223,8 @@ void MainWindows::demanderConnexion()
 {
     socket->connectToHost(ipValue->text().toStdString().c_str(), portValue->text().toInt());
     etatValue->setText("<b>Activé</b>");
+    ipValue->clearFocus();
+    portValue->clearFocus();
 }
 
 void MainWindows::demanderDeconnexion()
@@ -260,7 +264,12 @@ void MainWindows::envoyerAvancer()
 
 void MainWindows::envoyerStop()
 {
+    ipValue->clearFocus();
+    portValue->clearFocus();
+
     socket->write("s\r\n");
+    socket->flush();
+    socket->write("t526");
 }
 
 void MainWindows::envoyerPhare()
