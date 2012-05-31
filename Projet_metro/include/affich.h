@@ -24,7 +24,7 @@ typedef struct Changement * ListeChangement;
 
 void pause();
 int renvoi(char * nomImages[], char * texte);
-void afficherSDL(SDL_Surface *ecran, char ** nomImages, ListeChangement l);
+void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l);
 
 ListeChangement traitementAffichage(ListeRes resultat);
 
@@ -32,7 +32,7 @@ ListeChangement ajoutQueueChangement(ListeChangement liste, char l[], double c, 
 void supprimerChangement(ListeChangement liste);
 void afficherChangement(ListeChangement l);
 int max(int a, int b);
-int SDL_BlitSurfaceSecure(SDL_Surface* src, const SDL_Rect* srcrect, SDL_Surface* dst, SDL_Rect* dstrect);
+int SDL_BlitSurfaceSecure(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface **dst, SDL_Rect *dstrect);
 
 char* getLigne(ListeChangement liste, int num);
 double getCout(ListeChangement liste, int num);

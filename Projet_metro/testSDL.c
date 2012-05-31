@@ -17,10 +17,12 @@ int main(int argc, char *argv[])
 {
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
-	SDL_Surface* ecran = NULL, *texte = NULL;
+	SDL_Surface* ecran = NULL, *ecranSurface = NULL;
 	//SDL_Surface *ecran2;
 	//ecran = SDL_CreateRGBSurface(0,700,700,32,0xff000000,0x00ff0000,0x0000ff00,0x000000ff);
-	SDL_Rect position;
+	SDL_Rect origine;
+	origine.x = 0;
+	origine.y = 0;
 
 	/*TTF_Font *police = NULL;
 	SDL_Color couleurNoire = {0, 0, 0};
@@ -29,6 +31,8 @@ int main(int argc, char *argv[])
 	position.x = 10;
 	position.y = 10;
 	SDL_BlitSurface(texte, NULL, ecran, &position);*/
+	
+        ecranSurface = SDL_CreateRGBSurface(SDL_HWSURFACE, 0, 0, 32, 0, 0, 0, 0); // On cre notre surface de dpart : un rectangle de taille nulle !
 	int i;
 	
 	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3b", "M4", "M5", "M6", "M7", "M7b" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14"}; 
@@ -87,16 +91,20 @@ int main(int argc, char *argv[])
 	puts("fini ...");
 
 	
-	ecran =  SDL_SetVideoMode(700, 700, 32, SDL_HWSURFACE);
-	SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
-	afficherSDL(ecran,nomImages, final);
+	
+	//SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255, 255, 255));
+	afficherSDL(&ecranSurface,nomImages, final);
 	//ecran2 =  SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
-	//SDL_BlitSurface(ecran, NULL, ecran2, &position);
+
+	ecran = SDL_SetVideoMode(ecranSurface->w, ecranSurface->h, 32, SDL_HWSURFACE); // On cr��e la fenetre de rendu aux bonnes dimensions
+	SDL_BlitSurface(ecranSurface, NULL, ecran, &origine);
 	SDL_WM_SetCaption("Metro", NULL);
 	SDL_Flip(ecran);
+	//SDL_FreeSurface(ecranSurface);
 	//SDL_Flip(ecran2);
 	pause();
 	//TTF_CloseFont(police);
+	
 	TTF_Quit();
 	SDL_Quit();
 	return 0;
