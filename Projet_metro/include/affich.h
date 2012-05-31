@@ -9,7 +9,7 @@
 #include "donnees.h"
 
 #define CHEMIN "annexes/images/png/"
-#define NB_IMAGES 25
+#define NB_IMAGES 26
 
 struct Changement
 {
@@ -22,7 +22,7 @@ struct Changement
 };
 typedef struct Changement * ListeChangement;
 
-enum Type { METRO, TRAM, RER, ORLY };
+enum Type { METRO, TRAM, RER, ORLY, FUNI };
 typedef enum Type Type;
 
 void pause();

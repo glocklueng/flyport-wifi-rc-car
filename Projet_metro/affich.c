@@ -103,12 +103,12 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	SDL_Rect position, position2, posTexte2;
 	SDL_Surface *texte = NULL;
 	SDL_Surface * image = NULL;
-	puts("entree SDL");
+
 	TTF_Font *police = NULL;
 	SDL_Color couleurNoire = {0, 0, 0, 0};
 	police = TTF_OpenFont("annexes/DejaVuSans.ttf", 18);
-	if (police == NULL) puts("ttf manquante");
-	//tPrendre = TTF_RenderText_Blended(police, "Prendre", couleurNoire);
+	if (police == NULL) puts("ttf DejaVuSans.ttf manquante");
+
 	int i=0;
 	char tmp[TAILLE_NOM] ="";
 	char tcout[10] ="";
@@ -120,11 +120,11 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		i++;
 		coutTotal =coutTotal + l->cout;
 		position.x=1;
-		position.y=30*(i-1);
+		position.y=30*(i-1) + 30;
 		position2.x=28;
-		position2.y=30*(i-1);
+		position2.y=30*(i-1) +30;
 		posTexte2.x=60;
-		posTexte2.y=30*(i-1) + 3; 
+		posTexte2.y=30*(i-1) + 3 + 30; 
 		type = determinerType(l->ligne);
 		if ( type == RER )
 		{
@@ -165,7 +165,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		image = IMG_Load(tmp);
 		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
-		printf("%s\t%lf\t%s\t%s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+		printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
 		//SDL_BlitSurface(tPrendre, NULL, &ecran, &posTexte1);
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
 		}
@@ -205,16 +205,13 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	SDL_FreeSurface(texte);
 	SDL_FreeSurface(image);
 	TTF_CloseFont(police);
-	TTF_Quit();
 }
 
 int renvoi(char * nomImages[], char * texte)
 {
 	int i =0;
-	printf("%i", i);
 	while ( strcasecmp(texte, nomImages[i]) != 0 )
 	{
-		printf("%i", i);
 		i++;
 		if ( i > NB_IMAGES-1 ) return NB_IMAGES-1;
 	}
@@ -229,8 +226,10 @@ Type determinerType(char * nom)
 		return TRAM;
 	else if ( nom[0] == 'A' || nom[0] == 'B' || nom[0] == 'C'|| nom[0] == 'D'|| nom[0] == 'E' )
 		return RER;
-	else
+	else if ( nom[0] == 'V')
 		return ORLY;
+	else
+		return FUNI;
 
 }
 
