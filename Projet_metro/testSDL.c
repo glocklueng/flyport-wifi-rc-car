@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
         ecranSurface = SDL_CreateRGBSurface(SDL_HWSURFACE, 0, 0, 32, 0, 0, 0, 0); // On cre notre surface de dpart : un rectangle de taille nulle !
 	int i;
 	
-	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3b", "M4", "M5", "M6", "M7", "M7b" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14"}; 
+	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3b", "M4", "M5", "M6", "M7", "M7b" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE"}; 
 	/*char tmp[TAILLE_NOM] ="";
 	SDL_Surface * tabImages[NB_IMAGES];
 	for ( i = 0 ; i < NB_IMAGES ; i++ )
