@@ -114,9 +114,11 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	char tcout[10] ="";
 	int num;
 	Type type;
+	double coutTotal = 0;
 	while ( l!= NULL)
 	{
 		i++;
+		coutTotal =coutTotal + l->cout;
 		position.x=1;
 		position.y=30*(i-1);
 		position2.x=28;
@@ -154,6 +156,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
 
 		/* image de numero*/
+		if ( type != ORLY )
+		{
 		strcat(tmp,CHEMIN);
 		strcat(tmp,nomImages[num]);
 		strcat(tmp,".png");
@@ -164,12 +168,14 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		printf("%s\t%lf\t%s\t%s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
 		//SDL_BlitSurface(tPrendre, NULL, &ecran, &posTexte1);
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
-
+		}
 
 		/* texte */
 		strcat(tmp," Prendre le ");
 		if (type == RER)
 			strcat(tmp,"RER ");
+		else if (type == ORLY)
+			strcat(tmp,"Orly");
 		strcat(tmp,l->ligne);
 		strcat(tmp," de ");
 		strcat(tmp,l->nomDep);
@@ -182,9 +188,20 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
 		strcpy(tmp,"");
-
+		
 		l = l->next;
 	}
+
+	posTexte2.x += 30;
+	posTexte2.y += 30; 
+	strcat(tmp," Temps total : ");
+	strcpy(tcout,"");
+	sprintf(tcout, "%i",(int)(coutTotal/60));
+	strcat(tmp,tcout);
+	strcat(tmp," minutes ");
+	texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
+	SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
+
 	SDL_FreeSurface(texte);
 	SDL_FreeSurface(image);
 	TTF_CloseFont(police);
