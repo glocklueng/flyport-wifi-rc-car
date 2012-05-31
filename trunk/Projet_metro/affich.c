@@ -99,7 +99,8 @@ void afficherChangement(ListeChangement l)
 
 void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 {
-	SDL_Rect position, posTexte1, posTexte2;
+	/*Initialistaion images */
+	SDL_Rect position, position2, posTexte2;
 	SDL_Surface *texte = NULL;
 	SDL_Surface * image = NULL;
 	puts("entree SDL");
@@ -110,41 +111,78 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	//tPrendre = TTF_RenderText_Blended(police, "Prendre", couleurNoire);
 	int i=0;
 	char tmp[TAILLE_NOM] ="";
-	int num = renvoi(nomImages,l->ligne);
+	char tcout[10] ="";
+	int num;
+	Type type;
 	while ( l!= NULL)
 	{
 		i++;
 		position.x=1;
 		position.y=30*(i-1);
-		posTexte1.x=20;
-		posTexte1.y=30*(i-1);
-		posTexte2.x=30;
-		posTexte2.y=30*(i-1); 
+		position2.x=28;
+		position2.y=30*(i-1);
+		posTexte2.x=60;
+		posTexte2.y=30*(i-1) + 3; 
+		type = determinerType(l->ligne);
+		if ( type == RER )
+		{
+			strcpy(tmp,"R0");
+			tmp[1] = l->ligne[0];
+			num = renvoi(nomImages,tmp);
+			strcpy(tmp,"");
+		}
+		else
+			num = renvoi(nomImages,l->ligne);
+		printf("%i\n", num);  //DEBUG
 
-		num = renvoi(nomImages,l->ligne);
-		printf("%i\n", num);
+		/* image de type */
+		strcat(tmp,CHEMIN);
+		if ( type == METRO )
+			strcat(tmp,"M");
+		else if (type == TRAM)
+			strcat(tmp,"T");
+		else if (type == RER)
+			strcat(tmp,"R");
+		else if (type == ORLY)
+			strcat(tmp,"Val");
 
+		strcat(tmp,".png");
+		printf("%s\n",tmp); //DEBUG
+		image = IMG_Load(tmp);
+		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
+		strcpy(tmp,"");
+		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
+
+		/* image de numero*/
 		strcat(tmp,CHEMIN);
 		strcat(tmp,nomImages[num]);
 		strcat(tmp,".png");
-		printf("%s\n",tmp);
+		printf("%s\n",tmp); //DEBUG
 		image = IMG_Load(tmp);
 		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
 		printf("%s\t%lf\t%s\t%s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
 		//SDL_BlitSurface(tPrendre, NULL, &ecran, &posTexte1);
-		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
-		strcat(tmp,"Prendre le ");
+		SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
+
+
+		/* texte */
+		strcat(tmp," Prendre le ");
+		if (type == RER)
+			strcat(tmp,"RER ");
 		strcat(tmp,l->ligne);
 		strcat(tmp," de ");
 		strcat(tmp,l->nomDep);
-		//char c = 0xa0;
-		//strcat(tmp,&c);
 		strcat(tmp," à ");
 		strcat(tmp,l->nomArr);
+		strcat(tmp,", temps estimée : environ ");
+		sprintf(tcout, "%i",(int)(l->cout/60));
+		strcat(tmp,tcout);
+		strcat(tmp," minutes ");
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
 		strcpy(tmp,"");
+
 		l = l->next;
 	}
 	SDL_FreeSurface(texte);
@@ -165,6 +203,20 @@ int renvoi(char * nomImages[], char * texte)
 	}
 	return i;
 }
+
+Type determinerType(char * nom)
+{
+	if ( nom[0] == 'M' )
+		return METRO;
+	else if ( nom[0] == 'T')
+		return TRAM;
+	else if ( nom[0] == 'A' || nom[0] == 'B' || nom[0] == 'C'|| nom[0] == 'D'|| nom[0] == 'E' )
+		return RER;
+	else
+		return ORLY;
+
+}
+
 
 int max(int a, int b)
 {

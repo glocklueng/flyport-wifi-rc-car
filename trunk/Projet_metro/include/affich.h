@@ -9,7 +9,7 @@
 #include "donnees.h"
 
 #define CHEMIN "annexes/images/png/"
-#define NB_IMAGES 17
+#define NB_IMAGES 25
 
 struct Changement
 {
@@ -22,8 +22,12 @@ struct Changement
 };
 typedef struct Changement * ListeChangement;
 
+enum Type { METRO, TRAM, RER, ORLY };
+typedef enum Type Type;
+
 void pause();
 int renvoi(char * nomImages[], char * texte);
+Type determinerType(char * nom);
 void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l);
 
 ListeChangement traitementAffichage(ListeRes resultat);
