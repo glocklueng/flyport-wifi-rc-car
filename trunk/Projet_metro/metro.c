@@ -21,14 +21,14 @@ int main(int argc, char *argv[])
 	policeTitre = TTF_OpenFont("annexes/ETHNOCEN.TTF", 18);
 	if (policeTitre == NULL) puts("ttf ETHNOCEN.TTF manquante");
 
-	SDL_Rect origine;
+	SDL_Rect origine, posTitre;
 	origine.x = 0;
 	origine.y = 0;
 
-	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE", "Val", "pieton"}; 
+	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE"}; 
 	
 	int nbStation, numDep, numArr;
-	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM];
+	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM], tmp[TAILLE_NOM*2];
 	char nom[] =  "graphes/metro2012.csv";
 	Station * plan = NULL;
 	ListeRes resultat = NULL;
@@ -53,28 +53,46 @@ int main(int argc, char *argv[])
 
     	puts("aStar ...");
 	resultat = aStar(numDep, numArr, plan);
-	if (resultat == NULL)
-	{
-		puts("Pas de chemin possible !!!!!");
-		return  0;
-	}
-	//afficherRes(resultat);
-
-	puts("Changement :");
-	final = traitementAffichage(resultat);
-	//puts("affichage");
-	//afficherChangement(final);
-	puts("fini ...");
 
 	/* surface pour l'affichage */
 	ecranSurface = SDL_CreateRGBSurface(SDL_HWSURFACE, 0, 0, 32, 0, 0, 0, 0); // On créer notre surface de départ : un rectangle de taille nulle !
 
-	/* titre */
-	titre = TTF_RenderUTF8_Blended(policeTitre, "    MÉTRO Finder   ", couleurNoire);
-	SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &origine);
+	strcpy(tmp,"");
+	if (resultat != NULL)
+	{
+		
+		//afficherRes(resultat);
 
-	/* affichage graphique du resultat */
-	afficherSDL(&ecranSurface,nomImages, final);
+		puts("Changement :");
+		final = traitementAffichage(resultat);
+		//puts("affichage");
+		//afficherChangement(final);
+		puts("fini ...");
+
+		/* affichage graphique du resultat */
+		afficherSDL(&ecranSurface,nomImages, final);
+
+		/* titre */
+		sprintf(tmp,"Métro : %s à %s",plan[numDep].nom,plan[numArr].nom);
+		titre = TTF_RenderUTF8_Blended(policeTitre, tmp, couleurNoire);
+		posTitre.y = 0;
+		posTitre.x = abs(ecranSurface->w - titre->w)/2;
+		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);
+	}
+	else
+	{
+		/* titre */
+		SDL_Color couleurRouge = {255, 0, 0, 0};
+		sprintf(tmp,"Métro : %s à %s ",plan[numDep].nom,plan[numArr].nom);
+		titre = TTF_RenderUTF8_Blended(policeTitre, tmp, couleurNoire);
+		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &origine);	
+		posTitre.x = 0;
+		posTitre.y = titre->h;
+		titre = TTF_RenderUTF8_Blended(policeTitre,"Il n'y a pas de resultat : Chemin impossible !!!", couleurRouge);
+		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);	
+
+
+	}
 
 	/* écran final */
 	ecran = SDL_SetVideoMode(ecranSurface->w, ecranSurface->h, 32, SDL_HWSURFACE); // On créer la fenetre de rendu aux bonnes dimensions
