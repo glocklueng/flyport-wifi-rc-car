@@ -9,7 +9,7 @@
 #include "donnees.h"
 
 #define CHEMIN "annexes/images/png/"
-#define NB_IMAGES 27
+#define NB_IMAGES 25
 
 struct Changement
 {

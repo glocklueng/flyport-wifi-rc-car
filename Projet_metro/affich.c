@@ -137,7 +137,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		}
 		else
 			num = renvoi(nomImages,l->ligne);
-		printf("%i\n", num);  //DEBUG
+		//printf("%i\n", num);  //DEBUG
 
 		/* image de type */
 		strcat(tmp,CHEMIN);
@@ -173,6 +173,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcpy(tmp,"");
 			
 			SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
+
 		}
 
 		/* texte */
@@ -224,9 +225,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	strcat(tmp," minutes ");
 	texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 	SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
-
-	SDL_FreeSurface(texte);
 	SDL_FreeSurface(image);
+	SDL_FreeSurface(texte);
 	TTF_CloseFont(police);
 }
 
