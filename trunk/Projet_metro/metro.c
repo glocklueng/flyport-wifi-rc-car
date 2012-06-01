@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	origine.x = 0;
 	origine.y = 0;
 
-	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE", "Val"}; 
+	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE", "Val", "pieton"}; 
 	
 	int nbStation, numDep, numArr;
 	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM];
@@ -58,12 +58,12 @@ int main(int argc, char *argv[])
 		puts("Pas de chemin possible !!!!!");
 		return  0;
 	}
-	afficherRes(resultat);
+	//afficherRes(resultat);
 
 	puts("Changement :");
 	final = traitementAffichage(resultat);
-	puts("affichage");
-	afficherChangement(final);
+	//puts("affichage");
+	//afficherChangement(final);
 	puts("fini ...");
 
 	/* surface pour l'affichage */
