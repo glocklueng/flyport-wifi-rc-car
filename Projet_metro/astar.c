@@ -431,8 +431,8 @@ int nomToNum( char * nom, Station * plan , int nbStation)
     /* AFFICHAGE DES 5 MEILLIEURES AVEC CHOIX */
     for ( i = 0 ; i < TAILLE_LISTE_PROPOSITION ; i++)
     {
-        printf("%i:  %s  %i  %i\n",i,best[i].nom, best[i].num,best[i].prob);///DEBUG
-        //printf("%i:  %s\n",i,best[i].nom);
+        //printf("%i:  %s  %i  %i\n",i,best[i].nom, best[i].num,best[i].prob);///DEBUG
+        printf("%i:  %s\n",i,best[i].nom);
 
     }
     /* DEMANDE DU CHOIX */

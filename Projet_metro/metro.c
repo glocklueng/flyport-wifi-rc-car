@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE", "Val"}; 
 	
-	int i,nbStation, numDep, numArr;
+	int nbStation, numDep, numArr;
 	char nomDep[TAILLE_NOM], nomArr[TAILLE_NOM];
 	char nom[] =  "graphes/metro2012.csv";
 	Station * plan = NULL;
@@ -81,7 +81,6 @@ int main(int argc, char *argv[])
 	SDL_BlitSurface(ecranSurface, NULL, ecran, &origine);
 	SDL_WM_SetCaption("Metro", NULL);
 	SDL_Flip(ecran);
-	puts("final");
 	SDL_FreeSurface(ecranSurface);
 	SDL_FreeSurface(titre);
 	TTF_CloseFont(policeTitre);

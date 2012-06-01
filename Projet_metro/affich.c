@@ -147,6 +147,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcat(tmp,"R");
 		else if (type == ORLY)
 			strcat(tmp,"Val");
+		else if (type == FUNI)
+			strcat(tmp,"Val");
 
 		strcat(tmp,".png");
 		printf("%s\n",tmp); //DEBUG
@@ -156,18 +158,17 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
 
 		/* image de numero*/
-		if ( type != ORLY )
+		if ( type != ORLY && type != FUNI)
 		{
-		strcat(tmp,CHEMIN);
-		strcat(tmp,nomImages[num]);
-		strcat(tmp,".png");
-		printf("%s\n",tmp); //DEBUG
-		image = IMG_Load(tmp);
-		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
-		strcpy(tmp,"");
-		printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
-		//SDL_BlitSurface(tPrendre, NULL, &ecran, &posTexte1);
-		SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
+			strcat(tmp,CHEMIN);
+			strcat(tmp,nomImages[num]);
+			strcat(tmp,".png");
+			printf("%s\n",tmp); //DEBUG
+			image = IMG_Load(tmp);
+			if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
+			strcpy(tmp,"");
+			printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+			SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
 		}
 
 		/* texte */
@@ -177,6 +178,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		else if (type == ORLY)
 			strcat(tmp,"Orly");
 		strcat(tmp,l->ligne);
+		if (type == FUNI)
+			strcat(tmp,"culaire");
 		strcat(tmp," de ");
 		strcat(tmp,l->nomDep);
 		strcat(tmp," à ");
