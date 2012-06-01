@@ -9,7 +9,7 @@
 #include "donnees.h"
 
 #define CHEMIN "annexes/images/png/"
-#define NB_IMAGES 26
+#define NB_IMAGES 27
 
 struct Changement
 {
@@ -22,7 +22,7 @@ struct Changement
 };
 typedef struct Changement * ListeChangement;
 
-enum Type { METRO, TRAM, RER, ORLY, FUNI };
+enum Type { METRO, TRAM, RER, ORLY, FUNI, CORRES };
 typedef enum Type Type;
 
 void pause();
@@ -35,6 +35,7 @@ ListeChangement traitementAffichage(ListeRes resultat);
 ListeChangement ajoutQueueChangement(ListeChangement liste, char l[], double c, char dep[], char arr[]);
 void supprimerChangement(ListeChangement liste);
 void afficherChangement(ListeChangement l);
+int arrondi(double d);
 int max(int a, int b);
 int SDL_BlitSurfaceSecure(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface **dst, SDL_Rect *dstrect);
 

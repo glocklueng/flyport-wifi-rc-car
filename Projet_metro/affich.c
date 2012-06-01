@@ -74,9 +74,11 @@ ListeChangement traitementAffichage(ListeRes avant)
         }
         else // Sinon c'est une correspondance
         {
-            apres = ajoutQueueChangement(apres, ligneAvant ,compteur, stationDep, parcours->nom); // On ajoute le chagement a la liste des chagements
+            apres = ajoutQueueChangement(apres, ligneAvant ,compteur-360, stationDep, parcours->nom); // On ajoute le chagement a la liste des chagements
+		  apres = ajoutQueueChangement(apres, "pieton" ,360, ligneAvant, parcours->line); //la corespondance
             compteur=parcours->coutIciToSuivant; // On reinitailise le cout du changement
             strcpy(stationDep,parcours->nom); // On sauvegarde la station de départ du prochain changement
+		  
         }
         strcpy(ligneAvant,parcours->line); // On sauvegarde la ligne actuelle pour comparer avec la ligne suivant
 	if ( parcours->next == NULL )
@@ -148,50 +150,68 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		else if (type == ORLY)
 			strcat(tmp,"Val");
 		else if (type == FUNI)
-			strcat(tmp,"Val");
+			strcat(tmp,"funi");
+		else
+			strcat(tmp,"pieton");
 
 		strcat(tmp,".png");
-		printf("%s\n",tmp); //DEBUG
+		//printf("%s\n",tmp); //DEBUG
 		image = IMG_Load(tmp);
 		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
 
 		/* image de numero*/
-		if ( type != ORLY && type != FUNI)
+		if ( type != ORLY && type != FUNI && type != CORRES)
 		{
 			strcat(tmp,CHEMIN);
 			strcat(tmp,nomImages[num]);
 			strcat(tmp,".png");
-			printf("%s\n",tmp); //DEBUG
+			//printf("%s\n",tmp); //DEBUG
 			image = IMG_Load(tmp);
 			if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 			strcpy(tmp,"");
-			printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+			
 			SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
 		}
 
 		/* texte */
-		strcat(tmp," Prendre le ");
-		if (type == RER)
-			strcat(tmp,"RER ");
-		else if (type == ORLY)
-			strcat(tmp,"Orly");
-		strcat(tmp,l->ligne);
-		if (type == FUNI)
-			strcat(tmp,"culaire");
-		strcat(tmp," de ");
-		strcat(tmp,l->nomDep);
-		strcat(tmp," à ");
-		strcat(tmp,l->nomArr);
-		strcat(tmp,", temps estimée : environ ");
-		sprintf(tcout, "%i",(int)(l->cout/60));
-		strcat(tmp,tcout);
-		strcat(tmp," minutes ");
+		if ( type != CORRES )
+		{
+			strcat(tmp," Prendre le ");
+			if (type == RER)
+				strcat(tmp,"RER ");
+			else if (type == ORLY)
+				strcat(tmp,"Orly");
+			strcat(tmp,l->ligne);
+			if (type == FUNI)
+				strcat(tmp,"culaire");
+			strcat(tmp," de ");
+			strcat(tmp,l->nomDep);
+			strcat(tmp," à ");
+			strcat(tmp,l->nomArr);
+			strcat(tmp,", temps estimée : environ ");
+			sprintf(tcout, "%i",arrondi(l->cout/60));
+			strcat(tmp,tcout);
+			strcat(tmp," minutes ");
+			printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+		}
+		else
+		{
+			strcat(tmp," Correspondance pour ligne ");
+			strcat(tmp,l->nomArr);
+			strcat(tmp," environ ");
+			sprintf(tcout, "%i",arrondi(l->cout/60));
+			strcat(tmp,tcout);
+			strcat(tmp," minutes ");
+			printf("Correspondance pour ligne %s pendant %lf s\n",l->nomArr, l->cout);
+		}
+		
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
 		strcpy(tmp,"");
-		
+		strcpy(tcout,"");
+
 		l = l->next;
 	}
 
@@ -199,7 +219,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	posTexte2.y += 30; 
 	strcat(tmp," Temps total : ");
 	strcpy(tcout,"");
-	sprintf(tcout, "%i",(int)(coutTotal/60));
+	sprintf(tcout, "%i",arrondi(coutTotal/60));
 	strcat(tmp,tcout);
 	strcat(tmp," minutes ");
 	texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
@@ -231,9 +251,16 @@ Type determinerType(char * nom)
 		return RER;
 	else if ( nom[0] == 'V')
 		return ORLY;
-	else
+	else if (strcasecmp(nom,"funi") == 0)
 		return FUNI;
+	else
+		return CORRES;
 
+}
+
+int arrondi(double d)
+{
+	return (((double)(d-(int)d) > 0.5)?(int)d+1:(int)d);
 }
 
 
