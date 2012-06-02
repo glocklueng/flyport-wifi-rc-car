@@ -200,6 +200,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		else
 		{
 			strcat(tmp," Correspondance pour ligne ");
+			if (strcasecmp(l->nomArr,"Val") == 0)
+				strcat(tmp,"Orly");
 			strcat(tmp,l->nomArr);
 			strcat(tmp," environ ");
 			sprintf(tcout, "%i",arrondi(l->cout/60));
