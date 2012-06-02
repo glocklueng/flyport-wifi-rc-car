@@ -26,7 +26,6 @@ struct Souvenir
 {
 	int num;
 	int numPere;
-	//truc en plus à voir
 	struct Souvenir * next;
 };
 typedef struct Souvenir * ListeSouv;

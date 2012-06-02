@@ -31,9 +31,8 @@ typedef struct Station Station;
 
 
 ListeArcs ajoutTete( ListeArcs l, Arc arc);
-ListeArcs suppTete( ListeArcs l );
-//void * suppTete( void * l );
 void suppListeArcs( ListeArcs l);
+void suppStation( Station * plan, int nbStation);
 int estVide(ListeArcs l);
 void afficherListeArcs( ListeArcs graphe );
 void afficherStation( Station station );

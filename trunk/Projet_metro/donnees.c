@@ -13,34 +13,25 @@ ListeArcs ajoutTete( ListeArcs l, Arc arc)
 	return p;
 }
 
-ListeArcs suppTete( ListeArcs l )
+
+void suppListeArcs( ListeArcs list)
 {
-	if (estVide(l))
-		return  NULL;
-	ListeArcs p = NULL;
-	p = l->next;
-	free(l);
-	return p;
+	ListeArcs buff;
+    while(list != NULL)
+    {
+        buff = list->next;
+        free(list);
+        list = buff;
+    }
 }
-/*
-void * suppTete( void * l )
+
+void suppStation( Station * plan, int nbStation)
 {
-	if (l == NULL)
-		return  NULL;
-	void * p = NULL;
-	p = l->next;
-	free(l);
-	return p;
-}*/
-void suppListeArcs( ListeArcs l)
-{
-	if (estVide(l))
-		return;
-	ListeArcs p = l;
-	while ( p != NULL )
+	int i;
+	
+	for ( i = 0 ; i < nbStation ; i++ )
 	{
-		p = suppTete(p);
-		p = p->next;
+		suppListeArcs(plan[i].arcs);
 	}
 }
 
