@@ -10,7 +10,6 @@
 
 #include "include/donnees.h"
 
-
 ListeArcs ajoutTete( ListeArcs l, Arc arc)
 {
 	ListeArcs p = malloc(sizeof(*p));
@@ -23,22 +22,20 @@ ListeArcs ajoutTete( ListeArcs l, Arc arc)
 	return p;
 }
 
-
 void suppListeArcs( ListeArcs list)
 {
 	ListeArcs buff;
-    while(list != NULL)
-    {
-        buff = list->next;
-        free(list);
-        list = buff;
-    }
+    	while(list != NULL)
+    	{
+        	buff = list->next;
+        	free(list);
+        	list = buff;
+    	}
 }
 
 void suppStation( Station * plan, int nbStation)
 {
 	int i;
-	
 	for ( i = 0 ; i < nbStation ; i++ )
 	{
 		suppListeArcs(plan[i].arcs);

@@ -15,35 +15,35 @@ Station * lecture( char* nomFichier , int* nbStation)
 	int nbArcs, numArc;
 	int i;
 	Arc arc;
-	/* OUVERTURE DU FICHIER */
+	/* Ouverture du fichier */
 	FILE* fichier=fopen(nomFichier,"r");
 	if (fichier==NULL)
 	{
 		perror("Erreur d'ouverture du fichier source");
 		return NULL;
 	}
-	/* LECTURE DU NOMBRE DE STATIONS ET DU NOMBRE D'ARCS*/
+	/* Lecture du nombre de stations et du nombre d'arcs */
 	rewind(fichier);
 	fscanf(fichier, "%d %d", nbStation, &nbArcs);
-	/* CREATION DU GRAPHE */
+	/* Creation du graphe */
 	Station* plan = calloc(*nbStation,sizeof(Station));
-	/* INITILISATION DES ARCS DE PLAN */
+	/* Initialisation des arcs de plan */
 	for (i=0; i<*nbStation; i++)
 		plan[i].arcs = NULL;
-	/* LECTURE DES STATIONS*/
+	/* Lecture des stations */
 	sePlacer(fichier, STATION, *nbStation, nbArcs);
 	for(i=0; i<*nbStation; i++)
 	{
 		plan[i]=lireStation(fichier);
 	}
-	/* LECTURE DES ARCS */
+	/* Lecture des arcs */
 	sePlacer(fichier, ARC, *nbStation, nbArcs);
 	for(i=0; i<nbArcs; i++)
 	{
 		arc = lireArc(fichier,&numArc);
 		plan[numArc].arcs=ajoutTete(plan[numArc].arcs,arc);
 	}
-	/* FERMETURE DU FICHIER */
+	/* Fermeture du fichier */
 	fclose(fichier);
 	return plan;
 }

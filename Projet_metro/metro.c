@@ -18,7 +18,6 @@
 #include "include/astar.h"
 #include "include/affich.h"
 
-
 void viderBuffer();
 
 int main(int argc, char *argv[])
@@ -49,11 +48,10 @@ int main(int argc, char *argv[])
 	ListeRes resultat = NULL;
 	ListeChangement final = NULL;
 
-	/* lecture fichier */
-	//puts("lecture ...");
+	/* Lecture fichier */
 	plan = lecture(nom, &nbStation);
 	printf("nbStation = %i",nbStation);
-	/* demande station à l'utilisateur*/
+	/* Demande les stations de départ et d'arrivée à l'utilisateur */
     	puts("Choix de la station de départ :");
 	fgets(nomDep,TAILLE_NOM,stdin);
 	nomDep[strlen(nomDep)-1]='\0';
@@ -70,25 +68,18 @@ int main(int argc, char *argv[])
     	puts("Calcul aStar ...");
 	resultat = aStar(numDep, numArr, plan);
 
-	/* surface pour l'affichage */
+	/* Surface pour l'affichage */
 	ecranSurface = SDL_CreateRGBSurface(SDL_HWSURFACE, 0, 0, 32, 0, 0, 0, 0); // On créer notre surface de départ : un rectangle de taille nulle !
 
 	strcpy(tmp,"");
-	if (resultat != NULL)
+	if (resultat != NULL) //Cas OK
 	{
-		
-		//afficherRes(resultat);
-
-		//puts("Changement :");
 		final = traitementAffichage(resultat);
-		//puts("affichage");
-		//afficherChangement(final);
-		//puts("fini ...");
 
-		/* affichage graphique du resultat */
+		/* Affichage graphique du resultat */
 		afficherSDL(&ecranSurface,nomImages, final);
 
-		/* titre */
+		/* Titre */
 		titre = TTF_RenderUTF8_Blended(policeTitre, "Métro", couleurNoire);
 		posTitre.y = 0;
 		posTitre.x = abs(ecranSurface->w - titre->w)/2;
@@ -99,9 +90,9 @@ int main(int argc, char *argv[])
 
 
 	}
-	else
+	else //Cas Problème
 	{
-		/* titre */
+		/* Titre */
 		sprintf(tmp,"Itinéraire de %s à %s",plan[numDep].nom,plan[numArr].nom);
 		itineraire = TTF_RenderUTF8_Blended(policeItineraire, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);	
@@ -111,14 +102,10 @@ int main(int argc, char *argv[])
 		titre = TTF_RenderUTF8_Blended(policeTitre, "Métro", couleurNoire);
 		posTitre.y = 0;
 		posTitre.x = abs(ecranSurface->w - titre->w)/2;
-		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);	
-
-
-
-
+		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);
 	}
 
-	/* écran final */
+	/* Ecran final */
 	ecran = SDL_SetVideoMode(ecranSurface->w, ecranSurface->h, 32, SDL_HWSURFACE); // On créer la fenetre de rendu aux bonnes dimensions
 	SDL_BlitSurface(ecranSurface, NULL, ecran, &origine);
 	SDL_WM_SetCaption("Metro", NULL);
