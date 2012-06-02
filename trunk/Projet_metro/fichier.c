@@ -17,6 +17,9 @@ Station * lecture( char* nomFichier , int* nbStation)
 	fscanf(fichier, "%d %d", nbStation, &nbArcs);
 	/* CREATION DU GRAPHE */
 	Station* plan = calloc(*nbStation,sizeof(Station));
+	/* INITILISATION DES ARCS DE PLAN */
+	for (i=0; i<*nbStation; i++)
+		plan[i].arcs = NULL;
 	/* LECTURE DES STATIONS*/
 	sePlacer(fichier, STATION, *nbStation, nbArcs);
 	for(i=0; i<*nbStation; i++)
