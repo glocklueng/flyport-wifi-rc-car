@@ -160,6 +160,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
+		SDL_FreeSurface(image);
 
 		/* image de numero*/
 		if ( type != ORLY && type != FUNI && type != CORRES)
@@ -173,6 +174,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcpy(tmp,"");
 			
 			SDL_BlitSurfaceSecure(image, NULL, ecran, &position2);
+			SDL_FreeSurface(image);
 
 		}
 
@@ -212,6 +214,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
+		SDL_FreeSurface(texte);
 		strcpy(tmp,"");
 		strcpy(tcout,"");
 
@@ -228,7 +231,6 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	TTF_SetFontStyle(police, TTF_STYLE_BOLD);
 	texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 	SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
-	SDL_FreeSurface(image);
 	SDL_FreeSurface(texte);
 	TTF_CloseFont(police);
 }
