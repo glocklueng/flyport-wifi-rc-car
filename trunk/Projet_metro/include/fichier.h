@@ -1,3 +1,14 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : fichier.h (Type : Header - Release)                                               *
+ * Prototypes des fonctions du fichier source "fichier.c"                                      *
+ *                                                                                             *
+ ***********************************************************************************************/
+
+
 #ifndef _FICHIER
 #define _FICHIER
 

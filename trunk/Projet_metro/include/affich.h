@@ -1,3 +1,15 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : affich.h (Type : Header - Release)                                                *
+ * Prototypes des fonctions du fichier source "affich.c"                                       *
+ *                                                                                             *
+ ***********************************************************************************************/
+
+
+
 #ifndef _AFFICH
 #define _AFFICH
 

@@ -1,3 +1,15 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : affich.c (Type : Source - Release)                                                *
+ * Ce fichier regroupe toutes les fonctions assurant le rendu visuel de l'application aussi    *
+ * bien sur la console qu'en SDL                                                               *
+ ***********************************************************************************************/
+
+
+
 #include "include/affich.h"
 
 

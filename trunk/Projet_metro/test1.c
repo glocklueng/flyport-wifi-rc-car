@@ -1,3 +1,16 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : test1.c (Type : Source - Test)                                                    *
+ * Ce fichier est un exemple de programme test (lecture des stations)                          *
+ *                                                                                             *
+ ***********************************************************************************************/
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 

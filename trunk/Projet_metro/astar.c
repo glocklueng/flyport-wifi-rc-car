@@ -1,3 +1,16 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : astar.c (Type : Source - Realease)                                                *
+ * Ce fichier regroupe toutes les fonctions nécéssaires au calcul du trajet en utilisant       *
+ * l'algorithme astar                                                                          *
+ ***********************************************************************************************/
+
+
+
+
 #include "include/astar.h"
 
 ListeRes aStar(int numDep, int numArr, Station * plan)
