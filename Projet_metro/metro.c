@@ -105,6 +105,8 @@ int main(int argc, char *argv[])
 		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);	
 
 
+
+
 	}
 
 	/* écran final */
@@ -112,6 +114,10 @@ int main(int argc, char *argv[])
 	SDL_BlitSurface(ecranSurface, NULL, ecran, &origine);
 	SDL_WM_SetCaption("Metro", NULL);
 	SDL_Flip(ecran);
+
+	/* Libération mémoire */
+	supprimerChangement(final);
+	suppRes(resultat);
 	SDL_FreeSurface(ecranSurface);
 	SDL_FreeSurface(titre);
 	SDL_FreeSurface(itineraire);
