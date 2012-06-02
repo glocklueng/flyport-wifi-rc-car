@@ -437,6 +437,11 @@ int nomToNum( char * nom, Station * plan , int nbStation)
     }
     /* DEMANDE DU CHOIX */
     scanf("%i",&choix);
+    if (choix < 0 || choix > TAILLE_PROPOSITION-1)
+    {
+		printf("choix invalide, valeur par defaut : 0");  
+		choix = 0;
+    }
     /* RETOUR DU NUMERO CORRESPONDANT */
     return best[choix].num;
 }
