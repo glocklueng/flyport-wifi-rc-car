@@ -195,7 +195,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			sprintf(tcout, "%i",arrondi(l->cout/60));
 			strcat(tmp,tcout);
 			strcat(tmp," minutes ");
-			printf("Prendre la ligne %s pendant %lf s, de %s à %s\n",l->ligne, l->cout, l->nomDep, l->nomArr);
+			printf("Prendre la ligne %s pendant %i min, de %s à %s\n",l->ligne, arrondi(l->cout/60), l->nomDep, l->nomArr);
 		}
 		else
 		{
@@ -205,7 +205,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			sprintf(tcout, "%i",arrondi(l->cout/60));
 			strcat(tmp,tcout);
 			strcat(tmp," minutes ");
-			printf("Correspondance pour ligne %s pendant %lf s\n",l->nomArr, l->cout);
+			printf("Correspondance pour ligne %s pendant %i min\n",l->nomArr, arrondi(l->cout/60));
 		}
 
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
