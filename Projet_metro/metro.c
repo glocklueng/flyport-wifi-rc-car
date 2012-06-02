@@ -1,3 +1,13 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : metro.c (Type : Source - Realease)                                                *
+ * Ce fichier contient le programme principal                                                  *
+ *                                                                                             *
+ ***********************************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL/SDL.h>
@@ -17,7 +27,7 @@ int main(int argc, char *argv[])
 	TTF_Init();
 	SDL_Surface* ecran = NULL, *ecranSurface = NULL, *titre = NULL, *itineraire;
 	TTF_Font *policeTitre = NULL, *policeItineraire = NULL;
-	SDL_Color couleurNoire = {0, 0, 0, 0};
+	SDL_Color couleurNoire = {0, 0, 0, 0}, couleurRouge = {255, 0, 0, 0};
 	policeTitre = TTF_OpenFont("annexes/ETHNOCEN.TTF", 45);
 	policeItineraire = TTF_OpenFont("annexes/DejaVuSans.ttf", 18);
 	TTF_SetFontStyle(policeItineraire, TTF_STYLE_BOLD);
@@ -92,7 +102,6 @@ int main(int argc, char *argv[])
 	else
 	{
 		/* titre */
-		SDL_Color couleurRouge = {255, 0, 0, 0};
 		sprintf(tmp,"Itinéraire de %s à %s",plan[numDep].nom,plan[numArr].nom);
 		itineraire = TTF_RenderUTF8_Blended(policeItineraire, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);	

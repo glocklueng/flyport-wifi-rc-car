@@ -1,3 +1,13 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : donnees.c (Type : Source - Release)                                               *
+ * Ce fichier regroupe toutes les fonctions assurant la gestion des structures de données      *
+ * représentant le graphe des stations de métro                                                *
+ ***********************************************************************************************/
+
 #include "include/donnees.h"
 
 

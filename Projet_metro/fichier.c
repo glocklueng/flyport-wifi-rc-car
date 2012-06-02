@@ -1,3 +1,13 @@
+/***********************************************************************************************
+ * Projet Métro                                                                                *
+ * Grenoble INP - Phelma 2011/2012 - PET C                                                     *
+ * Florian TAVARES & Jérémy FANGUEDE                                                           *
+ *                                                                                             *
+ * Fichier : fichier.c (Type : Source - Release)                                               *
+ * Ce fichier regroupe toutes les fonctions assurant la lecture des fichiers CSV               *
+ *                                                                                             *
+ ***********************************************************************************************/
+
 #include "include/fichier.h"
 
 Station * lecture( char* nomFichier , int* nbStation)
