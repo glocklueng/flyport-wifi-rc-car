@@ -82,10 +82,11 @@ int getSouv(ListeSouv l, int num);
 void afficherRes(ListeRes resultat);
 double absDouble( double a);
 
-int nomToNum( char * nom, Station * plan , int nbStation);
+int nomToNum( char * nom, Station * plan , int nbStation);/* Retourne le premier numéro de station correspondant à nom[], les differents numeros pour un meme nom de statio/
+sont géré apres */
 void triABulles(SearchName * tab, int taille);
 void swap(SearchName * a, SearchName * b);
-int sontDifferents(SearchName * best, char * nom); // retourne 1 si differents
+int sontDifferents(SearchName * best, char * nom); // Retourne 1 si differents
 
 #endif
 

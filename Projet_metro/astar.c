@@ -399,8 +399,6 @@ void afficherRes(ListeRes resultat)
 	}
 }
 
-/* Retourne le premier numéro de station correspondant à nom[], les differents numeros pour un meme nom de station
-sont géré apres */
 int nomToNum( char * nom, Station * plan , int nbStation)
 {
     int i,choix;
