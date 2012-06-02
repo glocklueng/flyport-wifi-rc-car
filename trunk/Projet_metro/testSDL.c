@@ -18,7 +18,6 @@
 #include "include/astar.h"
 #include "include/affich.h"
 
-
 //#define CHEMIN "annexes/images/png/"
 
 void viderBuffer();

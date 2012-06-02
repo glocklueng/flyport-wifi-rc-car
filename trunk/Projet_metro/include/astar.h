@@ -13,14 +13,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
 #include <string.h>
 
 #include "donnees.h"
 
 #define TAILLE_LISTE_PROPOSITION 5
 
-/* amélioration : faire une liste triée par c*/
+/* Amélioration : faire une liste triée par c*/
 struct Data
 {
 	int num;
