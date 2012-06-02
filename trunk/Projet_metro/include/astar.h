@@ -60,6 +60,7 @@ struct SearchName
 };
 typedef struct SearchName SearchName;
 
+/* fonctions nécéssaire à A* */
 ListeRes aStar(int numDep, int numArr, Station * plan);
 Data getLowestC(ListeData open);
 ListeData removeData(ListeData list ,int num);
@@ -67,6 +68,9 @@ ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station* plan);
 ListeRes completer(ListeRes resultat, Station * plan);
 ListeRes simplifier( ListeRes resultat );
 double heuristic(int numDep,int numArr,Station * plan);
+double absDouble( double a);
+
+/* fonctions de structure de ListeRes, ListeSouv et ListeData */
 ListeRes ajouterRes(ListeRes l, int num);
 ListeRes setRes(ListeRes l, int num , double lat, double lon, char nom[TAILLE_NOM], char line[TAILLE_LINE], double coutIciToSuivant);
 ListeRes suppTeteRes( ListeRes l );
@@ -80,10 +84,10 @@ int isInListe(ListeData l,int num);
 double getCscore(ListeData l,int num);
 int getSouv(ListeSouv l, int num);
 void afficherRes(ListeRes resultat);
-double absDouble( double a);
 
-int nomToNum( char * nom, Station * plan , int nbStation);/* Retourne le premier numéro de station correspondant à nom[], les differents numeros pour un meme nom de statio/
-sont géré apres */
+
+/* recherche par nom */
+int nomToNum( char * nom, Station * plan , int nbStation);/* Retourne le premier numéro de station correspondant à nom[], les differents numeros pour un meme nom de station sont géré apres */
 void triABulles(SearchName * tab, int taille);
 void swap(SearchName * a, SearchName * b);
 int sontDifferents(SearchName * best, char * nom); // Retourne 1 si differents
