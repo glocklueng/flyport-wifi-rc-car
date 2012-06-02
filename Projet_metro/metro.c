@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	/* lecture fichier */
 	//puts("lecture ...");
 	plan = lecture(nom, &nbStation);
-
+	printf("nbStation = %i",nbStation);
 	/* demande station à l'utilisateur*/
     	puts("Choix de la station de départ :");
 	fgets(nomDep,TAILLE_NOM,stdin);
@@ -116,6 +116,8 @@ int main(int argc, char *argv[])
 	SDL_Flip(ecran);
 
 	/* Libération mémoire */
+	printf("nbStation = %i",nbStation);
+ 	suppStation(plan,nbStation);
 	supprimerChangement(final);
 	suppRes(resultat);
 	SDL_FreeSurface(ecranSurface);
