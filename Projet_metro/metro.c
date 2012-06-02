@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 	SDL_Rect origine, posTitre, posItineraire;
 	origine.x = 0;
 	origine.y = 0;
+	posItineraire.y = 80;
+	posItineraire.x = 90;
 
 	char * nomImages[NB_IMAGES] = { "M", "M1", "M2", "M3","M3bis", "M4", "M5", "M6", "M7", "M7bis" ,"M8", "M9", "M10", "M11", "M12", "M13", "M14", "T1", "T2", "T3", "RA", "RB", "RC", "RD", "RE"}; 
 	
@@ -82,8 +84,6 @@ int main(int argc, char *argv[])
 		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);
 		sprintf(tmp,"Itinéraire de %s à %s",plan[numDep].nom,plan[numArr].nom);
 		itineraire = TTF_RenderUTF8_Blended(policeItineraire, tmp, couleurNoire);
-		posItineraire.y = 80;
-		posItineraire.x = 90;
 		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);
 
 
@@ -92,12 +92,15 @@ int main(int argc, char *argv[])
 	{
 		/* titre */
 		SDL_Color couleurRouge = {255, 0, 0, 0};
-		sprintf(tmp,"Métro : %s à %s ",plan[numDep].nom,plan[numArr].nom);
-		titre = TTF_RenderUTF8_Blended(policeTitre, tmp, couleurNoire);
-		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &origine);	
-		posTitre.x = 0;
-		posTitre.y = titre->h;
-		titre = TTF_RenderUTF8_Blended(policeTitre,"Il n'y a pas de resultat : Chemin impossible !!!", couleurRouge);
+		sprintf(tmp,"Itinéraire de %s à %s",plan[numDep].nom,plan[numArr].nom);
+		itineraire = TTF_RenderUTF8_Blended(policeItineraire, tmp, couleurNoire);
+		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);	
+		posItineraire.y = ecranSurface->h;
+		itineraire = TTF_RenderUTF8_Blended(policeItineraire,"Désolé, aucun chemin n'a été trouvé entre ces deux stations !", couleurRouge);
+		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);
+		titre = TTF_RenderUTF8_Blended(policeTitre, "Métro", couleurNoire);
+		posTitre.y = 0;
+		posTitre.x = abs(ecranSurface->w - titre->w)/2;
 		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);	
 
 
@@ -110,6 +113,7 @@ int main(int argc, char *argv[])
 	SDL_Flip(ecran);
 	SDL_FreeSurface(ecranSurface);
 	SDL_FreeSurface(titre);
+	SDL_FreeSurface(itineraire);
 	TTF_CloseFont(policeTitre);
 	TTF_CloseFont(policeItineraire);
 	pause();
