@@ -437,7 +437,7 @@ int nomToNum( char * nom, Station * plan , int nbStation)
     }
     /* DEMANDE DU CHOIX */
     scanf("%i",&choix);
-    if (choix < 0 || choix > TAILLE_PROPOSITION-1)
+    if (choix < 0 || choix > TAILLE_LISTE_PROPOSITION-1)
     {
 		printf("choix invalide, valeur par defaut : 0");  
 		choix = 0;
