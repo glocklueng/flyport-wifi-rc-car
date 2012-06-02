@@ -69,11 +69,11 @@ int main(int argc, char *argv[])
 		
 		//afficherRes(resultat);
 
-		puts("Changement :");
+		//puts("Changement :");
 		final = traitementAffichage(resultat);
 		//puts("affichage");
 		//afficherChangement(final);
-		puts("fini ...");
+		//puts("fini ...");
 
 		/* affichage graphique du resultat */
 		afficherSDL(&ecranSurface,nomImages, final);
