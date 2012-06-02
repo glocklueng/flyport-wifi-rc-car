@@ -122,11 +122,11 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		i++;
 		coutTotal =coutTotal + l->cout;
 		position.x=1;
-		position.y=30*(i-1) + 30;
+		position.y=30*(i-1) + 110;
 		position2.x=28;
-		position2.y=30*(i-1) +30;
+		position2.y=30*(i-1) +110;
 		posTexte2.x=60;
-		posTexte2.y=30*(i-1) + 3 + 30; 
+		posTexte2.y=30*(i-1) + 3 + 110; 
 		type = determinerType(l->ligne);
 		if ( type == RER )
 		{
@@ -191,7 +191,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcat(tmp,l->nomDep);
 			strcat(tmp," à ");
 			strcat(tmp,l->nomArr);
-			strcat(tmp,", temps estimée : environ ");
+			strcat(tmp,". Temps estimé : environ ");
 			sprintf(tcout, "%i",arrondi(l->cout/60));
 			strcat(tmp,tcout);
 			strcat(tmp," minutes ");
@@ -207,7 +207,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcat(tmp," minutes ");
 			printf("Correspondance pour ligne %s pendant %lf s\n",l->nomArr, l->cout);
 		}
-		
+
 		texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 		SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
 		strcpy(tmp,"");
@@ -223,6 +223,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 	sprintf(tcout, "%i",arrondi(coutTotal/60));
 	strcat(tmp,tcout);
 	strcat(tmp," minutes ");
+	TTF_SetFontStyle(police, TTF_STYLE_BOLD);
 	texte = TTF_RenderUTF8_Blended(police, tmp, couleurNoire);
 	SDL_BlitSurfaceSecure(texte, NULL, ecran, &posTexte2);
 	SDL_FreeSurface(image);
