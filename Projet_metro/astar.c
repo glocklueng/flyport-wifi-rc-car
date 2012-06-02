@@ -90,7 +90,7 @@ Data getLowestC(ListeData open)
     return dataMin;
 }
 
-ListeData removeData(ListeData list ,int num) // Par recurrence : inutile, à changer !!
+ListeData removeData(ListeData list ,int num)
 {
 	if(list == NULL)
         return NULL;
@@ -441,6 +441,8 @@ int nomToNum( char * nom, Station * plan , int nbStation)
 		printf("choix invalide, valeur par defaut : 0");  
 		choix = 0;
     }
+    /* libération mémoire */
+    free(proba);
     /* Retour du numéro correspondant */
     return best[choix].num;
 }
