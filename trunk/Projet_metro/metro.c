@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	ListeChangement final = NULL;
 
 	/* lecture fichier */
-	puts("lecture ...");
+	//puts("lecture ...");
 	plan = lecture(nom, &nbStation);
 
 	/* demande station à l'utilisateur*/
@@ -48,15 +48,16 @@ int main(int argc, char *argv[])
 	fgets(nomDep,TAILLE_NOM,stdin);
 	nomDep[strlen(nomDep)-1]='\0';
     	numDep = nomToNum(nomDep, plan, nbStation);
-
+	printf("Vous avez choisi %s comme station de départ\n",plan[numDep].nom);
 	viderBuffer();
 
     	puts("Choix de la station d'arrivée :");
     	fgets(nomArr,TAILLE_NOM,stdin);
 	nomArr[strlen(nomArr)-1]='\0';
     	numArr = nomToNum(nomArr, plan, nbStation);
+	printf("Vous avez choisi %s comme station d'arrivée\n",plan[numArr].nom);
 
-    	puts("aStar ...");
+    	puts("Calcul aStar ...");
 	resultat = aStar(numDep, numArr, plan);
 
 	/* surface pour l'affichage */
