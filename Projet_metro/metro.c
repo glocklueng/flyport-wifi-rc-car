@@ -15,13 +15,16 @@ int main(int argc, char *argv[])
 {
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
-	SDL_Surface* ecran = NULL, *ecranSurface = NULL, *titre = NULL;
-	TTF_Font *policeTitre = NULL;
+	SDL_Surface* ecran = NULL, *ecranSurface = NULL, *titre = NULL, *itineraire;
+	TTF_Font *policeTitre = NULL, *policeItineraire = NULL;
 	SDL_Color couleurNoire = {0, 0, 0, 0};
-	policeTitre = TTF_OpenFont("annexes/ETHNOCEN.TTF", 18);
+	policeTitre = TTF_OpenFont("annexes/ETHNOCEN.TTF", 45);
+	policeItineraire = TTF_OpenFont("annexes/DejaVuSans.ttf", 18);
+	TTF_SetFontStyle(policeItineraire, TTF_STYLE_BOLD);
 	if (policeTitre == NULL) puts("ttf ETHNOCEN.TTF manquante");
+	if (policeItineraire == NULL) puts("ttf DejaVuSans.ttf manquante");
 
-	SDL_Rect origine, posTitre;
+	SDL_Rect origine, posTitre, posItineraire;
 	origine.x = 0;
 	origine.y = 0;
 
@@ -73,11 +76,17 @@ int main(int argc, char *argv[])
 		afficherSDL(&ecranSurface,nomImages, final);
 
 		/* titre */
-		sprintf(tmp,"Métro : %s à %s",plan[numDep].nom,plan[numArr].nom);
-		titre = TTF_RenderUTF8_Blended(policeTitre, tmp, couleurNoire);
+		titre = TTF_RenderUTF8_Blended(policeTitre, "Métro", couleurNoire);
 		posTitre.y = 0;
 		posTitre.x = abs(ecranSurface->w - titre->w)/2;
 		SDL_BlitSurfaceSecure(titre, NULL, &ecranSurface, &posTitre);
+		sprintf(tmp,"Itinéraire de %s à %s",plan[numDep].nom,plan[numArr].nom);
+		itineraire = TTF_RenderUTF8_Blended(policeItineraire, tmp, couleurNoire);
+		posItineraire.y = 80;
+		posItineraire.x = 90;
+		SDL_BlitSurfaceSecure(itineraire, NULL, &ecranSurface, &posItineraire);
+
+
 	}
 	else
 	{
