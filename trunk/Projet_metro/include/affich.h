@@ -51,12 +51,6 @@ Type determinerType(char * nom); // Fonction qui détermine le type de ligne ass
 int renvoi(char * nomImages[], char * texte); // ??
 int SDL_BlitSurfaceSecure(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface **dst, SDL_Rect *dstrect); // Fonction qui fait l'équivalent de la fonction SDL éponyme mais en s'assurant que l'image destination peut accueillir l'image source (en l'agrandissant si tel n'est pas le cas)
 
-/* Accesseurs éléments de la ListeChangement*/
-char* getLigne(ListeChangement liste, int num);
-double getCout(ListeChangement liste, int num);
-char* getDep(ListeChangement liste, int num);
-char* getArr(ListeChangement liste, int num);
-
 /* Divers */
 int arrondi(double d);
 int max(int a, int b);

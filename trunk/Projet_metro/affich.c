@@ -300,36 +300,3 @@ int SDL_BlitSurfaceSecure(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface **dst
         return output;
 }
 
-
-char* getLigne(ListeChangement liste, int num)
-{
-    int i;
-    for (i=0; i < num-1 ; i++)
-        liste = liste->next;
-    return liste->ligne;
-}
-
-double getCout(ListeChangement liste, int num)
-{
-    int i;
-    for (i=0; i < num-1 ; i++)
-        liste = liste->next;
-    return liste->cout;
-}
-
-char* getDep(ListeChangement liste, int num)
-{
-    int i;
-    for (i=0; i < num-1 ; i++)
-        liste = liste->next;
-    return liste->nomDep;
-}
-
-char* getArr(ListeChangement liste, int num)
-{
-    int i;
-    for (i=0; i < num-1 ; i++)
-        liste = liste->next;
-    return liste->nomArr;
-}
-
