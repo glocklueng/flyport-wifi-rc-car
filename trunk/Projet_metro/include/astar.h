@@ -86,7 +86,7 @@ double absDouble( double a);
 int nomToNum( char * nom, Station * plan , int nbStation);
 void triABulles(SearchName * tab, int taille);
 void swap(SearchName * a, SearchName * b);
-int sontDifferents(SearchName * best, char * nom);
+int sontDifferents(SearchName * best, char * nom); // retourne 1 si differents
 
 #endif
 

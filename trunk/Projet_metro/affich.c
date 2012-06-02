@@ -8,10 +8,7 @@
  * bien sur la console qu'en SDL                                                               *
  ***********************************************************************************************/
 
-
-
 #include "include/affich.h"
-
 
 void pause()
 {
@@ -27,7 +24,6 @@ void pause()
         }
     }
 }
-
 
 ListeChangement ajoutQueueChangement(ListeChangement liste, char l[], double c, char dep[], char arr[])
 {
@@ -113,7 +109,6 @@ void afficherChangement(ListeChangement l)
 
 void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 {
-	/*Initialistaion images */
 	SDL_Rect position, position2, posTexte2;
 	SDL_Surface *texte = NULL;
 	SDL_Surface * image = NULL;
@@ -149,9 +144,8 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 		}
 		else
 			num = renvoi(nomImages,l->ligne);
-		//printf("%i\n", num);  //DEBUG
 
-		/* image de type */
+		/* Icône de type */
 		strcat(tmp,CHEMIN);
 		if ( type == METRO )
 			strcat(tmp,"M");
@@ -167,20 +161,18 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 			strcat(tmp,"pieton");
 
 		strcat(tmp,".png");
-		//printf("%s\n",tmp); //DEBUG
 		image = IMG_Load(tmp);
 		if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 		strcpy(tmp,"");
 		SDL_BlitSurfaceSecure(image, NULL, ecran, &position);
 		SDL_FreeSurface(image);
 
-		/* image de numero*/
+		/* Icône numéro */
 		if ( type != ORLY && type != FUNI && type != CORRES)
 		{
 			strcat(tmp,CHEMIN);
 			strcat(tmp,nomImages[num]);
 			strcat(tmp,".png");
-			//printf("%s\n",tmp); //DEBUG
 			image = IMG_Load(tmp);
 			if ( image == NULL ) printf("Erreur à l'ouvertue de %s\n",tmp);
 			strcpy(tmp,"");
@@ -190,7 +182,7 @@ void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l)
 
 		}
 
-		/* texte */
+		/* Texte */
 		if ( type != CORRES )
 		{
 			strcat(tmp," Prendre le ");
