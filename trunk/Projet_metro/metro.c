@@ -111,6 +111,7 @@ int main(int argc, char *argv[])
 	SDL_FreeSurface(ecranSurface);
 	SDL_FreeSurface(titre);
 	TTF_CloseFont(policeTitre);
+	TTF_CloseFont(policeItineraire);
 	pause();
 	
 	TTF_Quit();
