@@ -61,13 +61,13 @@ struct SearchName
 typedef struct SearchName SearchName;
 
 /* fonctions nécéssaire à A* */
-ListeRes aStar(int numDep, int numArr, Station * plan);
-Data getLowestC(ListeData open);
-ListeData removeData(ListeData list ,int num);
-ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station* plan);
+ListeRes aStar(int numDep, int numArr, Station * plan);// fonction pricipale
+Data getLowestC(ListeData open); // extrait de la liste le sommet ayant le pls petit c
+ListeData removeData(ListeData list ,int num); // supprime de la liste le sommet ayant num pour numéro
+ListeRes reconstruire(ListeSouv souv, int numDep, int numArr, Station* plan); // reconstruit le chemin
 ListeRes completer(ListeRes resultat, Station * plan);
 ListeRes simplifier( ListeRes resultat );
-double heuristic(int numDep,int numArr,Station * plan);
+double heuristic(int numDep,int numArr,Station * plan); // heuristique de calcul du coût
 double absDouble( double a);
 
 /* fonctions de structure de ListeRes, ListeSouv et ListeData */

@@ -48,7 +48,7 @@ ListeChangement traitementAffichage(ListeRes resultat); // Fonctionne qui conver
 void afficherSDL(SDL_Surface **ecran, char ** nomImages, ListeChangement l); // Fonction principale d'affichage
 void pause(); // Fonction d'attente de fermeture de la fenêtre principale
 Type determinerType(char * nom); // Fonction qui détermine le type de ligne associé à la chaîne ligne du CSV
-int renvoi(char * nomImages[], char * texte); // ??
+int renvoi(char * nomImages[], char * texte); // renvoi le numéro de nomImages correspondant à l'image recherchée
 int SDL_BlitSurfaceSecure(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface **dst, SDL_Rect *dstrect); // Fonction qui fait l'équivalent de la fonction SDL éponyme mais en s'assurant que l'image destination peut accueillir l'image source (en l'agrandissant si tel n'est pas le cas)
 
 /* Divers */
